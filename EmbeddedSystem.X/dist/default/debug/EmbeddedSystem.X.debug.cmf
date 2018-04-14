@@ -1,0 +1,781 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/debug\EmbeddedSystem.X.debug.obj
+cinit CODE 0 3BC 3BC 1A 1
+text0 CODE 0 3D6 3D6 1A 1
+text1 CODE 0 3F0 3F0 1A 1
+text2 CODE 0 452 452 12 1
+text3 CODE 0 32A 32A 3A 1
+text4 CODE 0 464 464 E 1
+text5 CODE 0 4A0 4A0 4 1
+text6 CODE 0 364 364 2E 1
+text7 CODE 0 2DC 2DC 4E 1
+text8 CODE 0 480 480 8 1
+text9 CODE 0 392 392 2A 1
+text10 CODE 0 43C 43C 16 1
+text11 CODE 0 472 472 E 1
+text12 CODE 0 488 488 8 1
+text13 CODE 0 490 490 8 1
+text14 CODE 0 40A 40A 1A 1
+text16 CODE 0 BE BE 21E 1
+text17 CODE 0 498 498 8 1
+text18 CODE 0 424 424 18 1
+text19 CODE 0 4A4 4A4 2 1
+cstackCOMRAM COMRAM 1 26 26 23 1
+temp COMRAM 1 49 49 1 1
+intcode CODE 0 8 8 B2 1
+bssCOMRAM COMRAM 1 1 1 25 1
+$C:\Users\maxime\AppData\Local\Temp\slrg.obj
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 BA BA 4 1
+reset_vec CODE 0 0 0 6 1
+config CONFIG 0 300000 300000 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-F37 1
+SFR F38-FFC 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+BANK8 800-8FF 1
+BANK9 900-9FF 1
+CONST 6-7 1
+CONST 4A6-FFFF 1
+STACK 60-F37 1
+SMALLCONST 1000-FFFF 1
+CODE 6-7 1
+CODE 4A6-FFFF 1
+BANK10 A00-AFF 1
+BANK11 B00-BFF 1
+BANK12 C00-CFF 1
+BANK13 D00-DFF 1
+BANK14 E00-EFF 1
+BANK15 F00-F37 1
+BIGRAM 4A-F37 1
+COMRAM 4A-5F 1
+EEDATA F00000-F003FF 1
+MEDIUMCONST 1000-FFFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\EmbeddedSystem.X.debug.obj
+8 intcode CODE >128:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+8 intcode CODE >57:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+52 intcode CODE >60:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+5C intcode CODE >62:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+60 intcode CODE >63:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+62 intcode CODE >64:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+6A intcode CODE >66:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+6E intcode CODE >68:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+6E intcode CODE >72:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+4A4 text19 CODE >728:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+4A4 text19 CODE >731:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+424 text18 CODE >563:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+424 text18 CODE >567:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+42C text18 CODE >570:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+430 text18 CODE >572:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+434 text18 CODE >573:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+436 text18 CODE >574:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+436 text18 CODE >576:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+498 text17 CODE >581:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+498 text17 CODE >584:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+49A text17 CODE >594:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+49E text17 CODE >596:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+BE text16 CODE >233:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+BE text16 CODE >241:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+C0 text16 CODE >245:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+C4 text16 CODE >248:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+C6 text16 CODE >249:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+CA text16 CODE >253:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+D2 text16 CODE >255:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+D4 text16 CODE >261:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+D4 text16 CODE >263:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+D8 text16 CODE >266:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+E0 text16 CODE >267:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+EC text16 CODE >268:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+100 text16 CODE >270:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+108 text16 CODE >273:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+116 text16 CODE >276:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+11E text16 CODE >277:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+11E text16 CODE >281:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+120 text16 CODE >284:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+12C text16 CODE >287:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+12E text16 CODE >288:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+12E text16 CODE >291:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+130 text16 CODE >294:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+134 text16 CODE >297:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+136 text16 CODE >299:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+136 text16 CODE >304:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+138 text16 CODE >307:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+13C text16 CODE >309:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+13E text16 CODE >311:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+13E text16 CODE >313:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+142 text16 CODE >315:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+144 text16 CODE >316:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+14A text16 CODE >317:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+14C text16 CODE >318:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+14C text16 CODE >321:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+15A text16 CODE >324:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+15E text16 CODE >328:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+162 text16 CODE >329:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+164 text16 CODE >330:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+164 text16 CODE >333:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+168 text16 CODE >337:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+16A text16 CODE >339:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+16A text16 CODE >341:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+16E text16 CODE >343:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+170 text16 CODE >344:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+176 text16 CODE >345:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+178 text16 CODE >346:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+178 text16 CODE >350:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+17A text16 CODE >354:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+19A text16 CODE >357:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+19C text16 CODE >360:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1A0 text16 CODE >363:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1A4 text16 CODE >366:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1A6 text16 CODE >368:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1A6 text16 CODE >381:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1AC text16 CODE >384:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1BC text16 CODE >385:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1D0 text16 CODE >386:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1E0 text16 CODE >409:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1E0 text16 CODE >412:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1E4 text16 CODE >413:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1E8 text16 CODE >416:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1EC text16 CODE >417:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1EE text16 CODE >418:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1EE text16 CODE >421:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1F2 text16 CODE >424:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1F4 text16 CODE >426:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1F4 text16 CODE >429:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1F8 text16 CODE >432:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1FA text16 CODE >435:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+1FC text16 CODE >438:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+202 text16 CODE >440:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+204 text16 CODE >441:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+204 text16 CODE >444:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+20C text16 CODE >449:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+214 text16 CODE >452:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+218 text16 CODE >454:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+21E text16 CODE >455:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+220 text16 CODE >456:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+220 text16 CODE >464:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+222 text16 CODE >467:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+226 text16 CODE >470:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+228 text16 CODE >471:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+228 text16 CODE >474:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+238 text16 CODE >477:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+23A text16 CODE >479:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+23A text16 CODE >482:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+23E text16 CODE >486:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+240 text16 CODE >489:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+246 text16 CODE >492:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+248 text16 CODE >493:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+24A text16 CODE >494:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+24A text16 CODE >496:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+24C text16 CODE >497:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+250 text16 CODE >499:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+252 text16 CODE >501:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+252 text16 CODE >506:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+256 text16 CODE >509:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+258 text16 CODE >511:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+25A text16 CODE >513:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+25A text16 CODE >516:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+26A text16 CODE >519:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+272 text16 CODE >526:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+274 text16 CODE >529:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+278 text16 CODE >530:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+27A text16 CODE >531:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+27A text16 CODE >536:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+27C text16 CODE >538:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+280 text16 CODE >539:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+280 text16 CODE >542:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+282 text16 CODE >543:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+284 text16 CODE >545:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+284 text16 CODE >549:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+28A text16 CODE >550:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+28C text16 CODE >552:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+28C text16 CODE >556:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+28E text16 CODE >557:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+294 text16 CODE >560:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+296 text16 CODE >259:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+40A text14 CODE >125:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+40A text14 CODE >127:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+490 text13 CODE >132:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+490 text13 CODE >134:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+494 text13 CODE >135:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+496 text13 CODE >136:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+488 text12 CODE >148:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+488 text12 CODE >150:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+48C text12 CODE >151:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+48E text12 CODE >152:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+472 text11 CODE >185:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+474 text11 CODE >187:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+478 text11 CODE >188:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+47C text11 CODE >190:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+43C text10 CODE >240:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+43C text10 CODE >242:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+440 text10 CODE >244:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+446 text10 CODE >245:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+44C text10 CODE >247:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+450 text10 CODE >249:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+392 text9 CODE >156:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+394 text9 CODE >160:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+398 text9 CODE >162:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+39A text9 CODE >164:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+39E text9 CODE >166:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3A2 text9 CODE >168:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3A6 text9 CODE >170:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3AC text9 CODE >172:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3AE text9 CODE >173:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3B0 text9 CODE >174:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3B0 text9 CODE >176:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3B2 text9 CODE >177:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3B2 text9 CODE >178:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3B4 text9 CODE >180:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3BA text9 CODE >181:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+480 text8 CODE >140:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+480 text8 CODE >142:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+484 text8 CODE >143:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+486 text8 CODE >144:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+2DC text7 CODE >251:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+2DC text7 CODE >253:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+2E0 text7 CODE >255:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+2E6 text7 CODE >256:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+2EC text7 CODE >258:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+2F0 text7 CODE >260:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+2F6 text7 CODE >262:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+300 text7 CODE >263:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+30A text7 CODE >265:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+30E text7 CODE >267:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+320 text7 CODE >269:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+364 text6 CODE >198:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+364 text6 CODE >200:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+36C text6 CODE >201:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+374 text6 CODE >202:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+376 text6 CODE >203:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+378 text6 CODE >205:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+37C text6 CODE >208:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+380 text6 CODE >210:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+384 text6 CODE >212:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+388 text6 CODE >214:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+38C text6 CODE >218:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+38E text6 CODE >220:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+390 text6 CODE >222:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/i2c1.c
+4A0 text5 CODE >51:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+4A0 text5 CODE >54:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+4A2 text5 CODE >55:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/interrupt_manager.c
+464 text4 CODE >120:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+464 text4 CODE >123:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+468 text4 CODE >125:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+46C text4 CODE >127:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+470 text4 CODE >128:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+32A text3 CODE >52:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+32A text3 CODE >57:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+32E text3 CODE >58:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+332 text3 CODE >59:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+336 text3 CODE >60:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+33A text3 CODE >61:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+33E text3 CODE >66:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+342 text3 CODE >67:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+344 text3 CODE >68:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+346 text3 CODE >69:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+348 text3 CODE >70:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+34A text3 CODE >75:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+350 text3 CODE >76:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+354 text3 CODE >77:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+356 text3 CODE >78:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+35A text3 CODE >79:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+35E text3 CODE >84:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+360 text3 CODE >85:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+362 text3 CODE >92:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/pin_manager.c
+452 text2 CODE >111:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+452 text2 CODE >114:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+456 text2 CODE >115:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+45A text2 CODE >116:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+45E text2 CODE >117:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+462 text2 CODE >118:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\mcc_generated_files/mcc.c
+3F0 text1 CODE >105:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3F0 text1 CODE >107:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3F2 text1 CODE >108:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3F4 text1 CODE >110:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3F8 text1 CODE >111:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3FC text1 CODE >114:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+400 text1 CODE >116:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+402 text1 CODE >117:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+404 text1 CODE >119:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+406 text1 CODE >120:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+408 text1 CODE >121:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3D6 text0 CODE >63:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3D6 text0 CODE >67:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3DA text0 CODE >84:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3DE text0 CODE >94:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3E2 text0 CODE >95:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3E2 text0 CODE >97:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3EE text0 CODE >95:C:\Users\maxime\MPLABXProjects\EmbeddedSystem.X\main.c
+3BC cinit CODE >2771:C:\Users\maxime\AppData\Local\Temp\slrg.
+3BC cinit CODE >2773:C:\Users\maxime\AppData\Local\Temp\slrg.
+3BC cinit CODE >2776:C:\Users\maxime\AppData\Local\Temp\slrg.
+3BC cinit CODE >2809:C:\Users\maxime\AppData\Local\Temp\slrg.
+3C0 cinit CODE >2810:C:\Users\maxime\AppData\Local\Temp\slrg.
+3C2 cinit CODE >2811:C:\Users\maxime\AppData\Local\Temp\slrg.
+3C2 cinit CODE >2812:C:\Users\maxime\AppData\Local\Temp\slrg.
+3C4 cinit CODE >2813:C:\Users\maxime\AppData\Local\Temp\slrg.
+3C6 cinit CODE >2814:C:\Users\maxime\AppData\Local\Temp\slrg.
+3C8 cinit CODE >2820:C:\Users\maxime\AppData\Local\Temp\slrg.
+3C8 cinit CODE >2822:C:\Users\maxime\AppData\Local\Temp\slrg.
+3CA cinit CODE >2823:C:\Users\maxime\AppData\Local\Temp\slrg.
+3CC cinit CODE >2825:C:\Users\maxime\AppData\Local\Temp\slrg.
+3CE cinit CODE >2826:C:\Users\maxime\AppData\Local\Temp\slrg.
+3D0 cinit CODE >2827:C:\Users\maxime\AppData\Local\Temp\slrg.
+3D2 cinit CODE >2828:C:\Users\maxime\AppData\Local\Temp\slrg.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__end_of_i2c_waitForIdle 424 0 CODE 0 text14 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\EmbeddedSystem.X.debug.obj
+_I2C1_Initialize 364 0 CODE 0 text6 dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_ReadTemp 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hspace_0 30000E 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hspace_1 4A 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hspace_2 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_p_i2c1_trb_current C 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1STATbits FC7 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\EmbeddedSystem.X.debug.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\maxime\AppData\Local\Temp\slrg.obj
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c_init 3F0 0 CODE 0 text1 dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c_read 392 0 CODE 0 text9 dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c_stop 488 0 CODE 0 text12 dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_INTERRUPT_Initialize 4A4 0 CODE 0 text5 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\EmbeddedSystem.X.debug.obj
+_LATA F89 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_LATB F8A 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_LATC F8B 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_LATD F8C 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_LATE F8D 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_WPUB F61 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+___sp 0 0 STACK 2 stack C:\Users\maxime\AppData\Local\Temp\slrg.obj
+_main 3D6 0 CODE 0 text0 dist/default/debug\EmbeddedSystem.X.debug.obj
+btemp 49 0 COMRAM 1 temp dist/default/debug\EmbeddedSystem.X.debug.obj
+start BA 0 CODE 0 init C:\Users\maxime\AppData\Local\Temp\slrg.obj
+__end_of_i2c_init 40A 0 CODE 0 text1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_i2c_read 3BC 0 CODE 0 text9 dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_i2c_stop 490 0 CODE 0 text12 dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_main 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_I2C1_ISR 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+I2C1_ISR@i2c_10bit_address_restart E 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_p_i2c1_current A 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CCP2MX$PORTC1 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+I2C1_ISR@i2c_address 24 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hpowerup BA 0 CODE 0 powerup dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c_waitForIdle 40A 0 CODE 0 text14 dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_ReadTemp 2DC 0 CODE 0 text7 dist/default/debug\EmbeddedSystem.X.debug.obj
+__accesstop 60 0 ABS 0 - C:\Users\maxime\AppData\Local\Temp\slrg.obj
+intlevel0 0 0 CODE 0 text C:\Users\maxime\AppData\Local\Temp\slrg.obj
+intlevel1 0 0 CODE 0 text C:\Users\maxime\AppData\Local\Temp\slrg.obj
+intlevel2 0 0 CODE 0 text C:\Users\maxime\AppData\Local\Temp\slrg.obj
+intlevel3 0 0 CODE 0 text C:\Users\maxime\AppData\Local\Temp\slrg.obj
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+I2C1_ISR@pi2c_buf_ptr 8 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+wtemp6 4A 0 COMRAM 1 temp dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+ReadTemp@temp1 46 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_P2BMX$PORTD2 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_ReadTemp 32A 0 CODE 0 text7 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\EmbeddedSystem.X.debug.obj
+I2C1_ISR@i2c_bytes_left F 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\EmbeddedSystem.X.debug.obj
+i2c_write@i2cWriteData 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_PRICLKEN$ON 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_I2C1_FunctionComplete 43C 0 CODE 0 text18 dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_ANSELA F38 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_ANSELB F39 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_ANSELC F3A 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_ANSELD F3B 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_ANSELE F3C 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_I2C1_Initialize 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\maxime\AppData\Local\Temp\slrg.obj
+_I2C1_ISR BE 0 CODE 0 text16 dist/default/debug\EmbeddedSystem.X.debug.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\maxime\AppData\Local\Temp\slrg.obj
+__end_of_INTERRUPT_InterruptManager BA 0 CODE 0 intcode dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_I2C1_ISR 2DC 0 CODE 0 text16 dist/default/debug\EmbeddedSystem.X.debug.obj
+_I2C1_FunctionComplete 424 0 CODE 0 text18 dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_i2c_start 498 0 CODE 0 text13 dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_i2c_write 480 0 CODE 0 text11 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hintcodelo BA 0 CODE 0 intcodelo dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_i2c_start 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_i2c_write 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_ConfTemp 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+?_i2c_read 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c_start 490 0 CODE 0 text13 dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c_write 472 0 CODE 0 text11 dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c1_trb_count 10 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+_INTCON2bits FF1 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_i2c_waitForIdle 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lintcodelo BA 0 CODE 0 intcodelo dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_PIN_MANAGER_Initialize 32A 0 CODE 0 text3 dist/default/debug\EmbeddedSystem.X.debug.obj
+start_initialization 3BC 0 CODE 0 cinit dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_PBADEN$ON 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_OSCCON FD3 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+_TRISCbits F94 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+___rparam_used 1 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_SYSTEM_Initialize 464 0 CODE 0 text2 dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+I2C1_MasterRead@trBlock 12 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+?_ReadTemp 3F 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank0 0 0 ABS 0 bank0 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank1 0 0 ABS 0 bank1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank2 0 0 ABS 0 bank2 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank3 0 0 ABS 0 bank3 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank4 0 0 ABS 0 bank4 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank5 0 0 ABS 0 bank5 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank6 0 0 ABS 0 bank6 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank7 0 0 ABS 0 bank7 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank8 0 0 ABS 0 bank8 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank9 0 0 ABS 0 bank9 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hconst 0 0 CONST 0 const dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hidata 0 0 CODE 0 idata dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hparam 0 0 COMRAM 1 rparam dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hstack 0 0 STACK 2 stack dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext0 0 0 ABS 0 text0 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext1 0 0 ABS 0 text1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext2 0 0 ABS 0 text2 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext3 0 0 ABS 0 text3 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext4 0 0 ABS 0 text4 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext5 0 0 ABS 0 text5 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext6 0 0 ABS 0 text6 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext7 0 0 ABS 0 text7 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext8 0 0 ABS 0 text8 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext9 0 0 ABS 0 text9 dist/default/debug\EmbeddedSystem.X.debug.obj
+_ConfTemp 43C 0 CODE 0 text10 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank10 0 0 ABS 0 bank10 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank11 0 0 ABS 0 bank11 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank12 0 0 ABS 0 bank12 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank13 0 0 ABS 0 bank13 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank14 0 0 ABS 0 bank14 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbank15 0 0 ABS 0 bank15 dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c_repStart 480 0 CODE 0 text8 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\EmbeddedSystem.X.debug.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\maxime\AppData\Local\Temp\slrg.obj
+__Hcomram 0 0 ABS 0 comram dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hconfig 30000E 0 CONFIG 0 config dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_ConfTemp 452 0 CODE 0 text10 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank0 0 0 ABS 0 bank0 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank1 0 0 ABS 0 bank1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank2 0 0 ABS 0 bank2 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank3 0 0 ABS 0 bank3 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank4 0 0 ABS 0 bank4 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank5 0 0 ABS 0 bank5 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank6 0 0 ABS 0 bank6 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank7 0 0 ABS 0 bank7 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank8 0 0 ABS 0 bank8 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank9 0 0 ABS 0 bank9 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lconst 0 0 CONST 0 const dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lidata 0 0 CODE 0 idata dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lparam 0 0 COMRAM 1 rparam dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lstack 0 0 STACK 2 stack dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext6 0 0 ABS 0 text6 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext7 0 0 ABS 0 text7 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext8 0 0 ABS 0 text8 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext9 0 0 ABS 0 text9 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_T3CMX$PORTC0 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_INTCONbits FF2 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_INTERRUPT_Initialize 4A0 0 CODE 0 text5 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hdata 0 0 ABS 0 data dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hinit BE 0 CODE 0 init dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htemp 4A 0 COMRAM 1 temp dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext 0 0 ABS 0 text dist/default/debug\EmbeddedSystem.X.debug.obj
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ldata 0 0 ABS 0 data dist/default/debug\EmbeddedSystem.X.debug.obj
+__Linit BA 0 CODE 0 init dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltemp 49 0 COMRAM 1 temp dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext 0 0 ABS 0 text dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_I2C1_BusCollisionISR 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1CON1 FC6 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1CON2 FC5 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1CON3 FCB 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1STAT FC7 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+int$flags 49 0 COMRAM 1 temp dist/default/debug\EmbeddedSystem.X.debug.obj
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hintret 0 0 ABS 0 intret dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\EmbeddedSystem.X.debug.obj
+__S0 30000E 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__S1 4A 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__S2 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_i2c_repStart 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_I2C1_BusCollisionISR 4A6 0 CODE 0 text19 dist/default/debug\EmbeddedSystem.X.debug.obj
+ReadTemp@temp 45 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\EmbeddedSystem.X.debug.obj
+i2c_read@i2cReadData 3E 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+_SYSTEM_Initialize 452 0 CODE 0 text2 dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_BORV$190 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lintentry 0 0 ABS 0 intentry dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hramtop 1000 0 RAM 0 ramtop dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hrparam 0 0 COMRAM 1 rparam dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_PWRTEN$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__activetblptr 2 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_i2c_repStart 488 0 CODE 0 text8 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext10 0 0 ABS 0 text10 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext11 0 0 ABS 0 text11 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext12 0 0 ABS 0 text12 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext13 0 0 ABS 0 text13 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext14 0 0 ABS 0 text14 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext16 0 0 ABS 0 text16 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext17 0 0 ABS 0 text17 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext18 0 0 ABS 0 text18 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Htext19 0 0 ABS 0 text19 dist/default/debug\EmbeddedSystem.X.debug.obj
+_INTERRUPT_InterruptManager 8 0 CODE 0 intcode dist/default/debug\EmbeddedSystem.X.debug.obj
+_PIE1bits F9D 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_PIE2bits FA0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_HFOFST$ON 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext10 43C 0 CODE 0 text10 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext11 472 0 CODE 0 text11 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext12 488 0 CODE 0 text12 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext13 490 0 CODE 0 text13 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext14 40A 0 CODE 0 text14 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext16 BE 0 CODE 0 text16 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext17 498 0 CODE 0 text17 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext18 424 0 CODE 0 text18 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext19 4A4 0 CODE 0 text19 dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_PIN_MANAGER_Initialize 364 0 CODE 0 text3 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank10 0 0 ABS 0 bank10 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank11 0 0 ABS 0 bank11 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank12 0 0 ABS 0 bank12 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank13 0 0 ABS 0 bank13 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank14 0 0 ABS 0 bank14 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbank15 0 0 ABS 0 bank15 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lcomram 0 0 ABS 0 comram dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lconfig 300000 0 CONFIG 0 config dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_I2C1_Stop 4A0 0 CODE 0 text17 dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_I2C1_Stop 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_I2C1_FunctionComplete 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+main@temp 47 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\EmbeddedSystem.X.debug.obj
+stackhi F37 0 ABS 0 - C:\Users\maxime\AppData\Local\Temp\slrg.obj
+stacklo 60 0 ABS 0 - C:\Users\maxime\AppData\Local\Temp\slrg.obj
+__Lintcode 8 0 CODE 0 intcode dist/default/debug\EmbeddedSystem.X.debug.obj
+_OSCCON2 FD2 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_OSCTUNE F9B 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lintret 0 0 ABS 0 intret dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\EmbeddedSystem.X.debug.obj
+_I2C1_Stop 498 0 CODE 0 text17 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lspace_0 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lspace_1 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lspace_2 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+_PIR1bits F9E 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_PIR2bits FA1 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_LVP$ON 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+I2C1_MasterWrite@trBlock 18 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+end_of_initialization 3C8 0 CODE 0 cinit dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hintentry 0 0 ABS 0 intentry dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_RCONbits FD0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+i2c_read@ack 3D 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hreset_vec 6 0 CODE 0 reset_vec dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lramtop 1000 0 RAM 0 ramtop dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lrparam 0 0 COMRAM 1 rparam dist/default/debug\EmbeddedSystem.X.debug.obj
+__pcinit 3BC 0 CODE 0 cinit dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext0 3D6 0 CODE 0 text0 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext1 3F0 0 CODE 0 text1 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext2 452 0 CODE 0 text2 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext3 32A 0 CODE 0 text3 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext4 464 0 CODE 0 text4 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext5 4A0 0 CODE 0 text5 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext6 364 0 CODE 0 text6 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext7 2DC 0 CODE 0 text7 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext8 480 0 CODE 0 text8 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ptext9 392 0 CODE 0 text9 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext10 0 0 ABS 0 text10 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext11 0 0 ABS 0 text11 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext12 0 0 ABS 0 text12 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext13 0 0 ABS 0 text13 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext14 0 0 ABS 0 text14 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext16 0 0 ABS 0 text16 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext17 0 0 ABS 0 text17 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext18 0 0 ABS 0 text18 dist/default/debug\EmbeddedSystem.X.debug.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/debug\EmbeddedSystem.X.debug.obj
+__ramtop 1000 0 RAM 0 ramtop C:\Users\maxime\AppData\Local\Temp\slrg.obj
+__Lpowerup BA 0 CODE 0 powerup dist/default/debug\EmbeddedSystem.X.debug.obj
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c1_state 11 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\EmbeddedSystem.X.debug.obj
+?_i2c_start 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+___param_bank 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of__initialization 3C8 0 CODE 0 cinit dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+ReadTemp@t 43 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1CON1bits FC6 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1CON2bits FC5 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c1_object 1 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__pcstackCOMRAM 26 0 COMRAM 1 cstackCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_I2C1_Initialize 392 0 CODE 0 text6 dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1ADD FC8 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_SSP1BUF FC9 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_main 3F0 0 CODE 0 text0 dist/default/debug\EmbeddedSystem.X.debug.obj
+__pintcode 8 0 CODE 0 intcode dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_i2c_init 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_i2c_read 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_i2c_stop 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_TRISA F92 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_TRISB F93 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_TRISC F94 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_TRISD F95 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_TRISE F96 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__HRAM 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hbss 0 0 RAM 1 bss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hram 0 0 ABS 0 ram dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\EmbeddedSystem.X.debug.obj
+__LRAM 1 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lbss 0 0 RAM 1 bss dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lram 0 0 ABS 0 ram dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_PLLCFG$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_I2C1_BusCollisionISR 4A4 0 CODE 0 text19 dist/default/debug\EmbeddedSystem.X.debug.obj
+__end_of_OSCILLATOR_Initialize 472 0 CODE 0 text4 dist/default/debug\EmbeddedSystem.X.debug.obj
+__initialization 3BC 0 CODE 0 cinit dist/default/debug\EmbeddedSystem.X.debug.obj
+_i2c1_tr_queue 1E 0 COMRAM 1 bssCOMRAM dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\EmbeddedSystem.X.debug.obj
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\EmbeddedSystem.X.debug.obj
+__CFG_MCLRE$EXTMCLR 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+__Hintcode BA 0 CODE 0 intcode dist/default/debug\EmbeddedSystem.X.debug.obj
+__size_of_INTERRUPT_Initialize 0 0 ABS 0 - dist/default/debug\EmbeddedSystem.X.debug.obj
+_OSCILLATOR_Initialize 464 0 CODE 0 text4 dist/default/debug\EmbeddedSystem.X.debug.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+idloc 0 200000 200000 8 1
+reset_vec 0 0 0 6 1
+intcode 0 8 8 49E 1
+bssCOMRAM 1 1 1 49 1
+config 0 300000 300000 E 1
