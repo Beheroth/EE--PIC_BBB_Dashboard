@@ -41,23 +41,13 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "main.h"
 
 #define TEMP = 0x48
 
 /*
                          Main application
  */
-int ReadTemp();
-void ConfTemp();
-void write_Arduino();
-void i2c_init();
-void i2c_waitForIdle();
-void i2c_start();
-void i2c_repStart();
-void i2c_stop();
-int i2c_read( unsigned char ack );
-unsigned char i2c_write( unsigned char i2cWriteData );
-
 
 
 void main(void)
@@ -119,20 +109,21 @@ void main(void)
 
 void i2c1_init()
 {
-   TRISCbits.RC3 =1;            // set SCL pin as input
-   TRISCbits.RC4 =1;            // set SDA pin as input
+    TRISCbits.RC3 =1;            // set SCL pin as input
+    TRISCbits.RC4 =1;            // set SDA pin as input
 
-  SSP1CON1 = 0x38;      // set I2C master mode
-  SSP1CON2 = 0x00;
+    SSP1CON1 = 0x38;      // set I2C master mode
+    SSP1CON2 = 0x00;
 
     // 400kHz bus with 10MHz xtal - use 0x0C with 20MHz xtal
- SSP1ADD = 10;            // 100k at 4Mhz clock
+    SSP1ADD = 10;            // 100k at 4Mhz clock
 
- SSP1STATbits.CKE =0;     // use I2C levels      worked also with '0'
- SSP1STATbits.SMP =0;     // disable slew rate control  worked also with '0'
+    SSP1STATbits.CKE =0;     // use I2C levels      worked also with '0'
+    SSP1STATbits.SMP =0;     // disable slew rate control  worked also with '0'
 
- PIR1bits.SSP1IF=0;      // clear SSPIF interrupt flag
- PIR2bits.BCL1IF=0;      // clear bus collision flag
+    PIR1bits.SSP1IF=0;      // clear SSPIF interrupt flag
+    PIR2bits.BCL1IF=0;      // clear bus collision flag
+    
 }
 
 void i2c2_Initialize(void)
@@ -165,68 +156,69 @@ void i2c2_Initialize(void)
 
 void i2c1_waitForIdle()
 {
- while (( SSP1CON2 & 0x1F ) | SSP1STATbits.RW ) {}; // wait for idle and not writing
+    while (( SSP1CON2 & 0x1F ) | SSP1STATbits.RW ) {}; // wait for idle and not writing
+    //Concerned SSP1CON bits are, Acknowledge sequence, Receive, Stop condition, Repeated Start condition, Start condition
 }
 
 /******************************************************************************************/
 
 void i2c1_start()
 {
- i2c_waitForIdle();
- SSP1CON2bits.SEN=1;
+    i2c_waitForIdle();
+    SSP1CON2bits.SEN=1;
 }
 
 /******************************************************************************************/
 
 void i2c1_repStart()
 {
- i2c_waitForIdle();
- SSP1CON2bits.RSEN=1;
+    i2c_waitForIdle();
+    SSP1CON2bits.RSEN=1;
 }
 
 /******************************************************************************************/
 
 void i2c1_stop()
 {
- i2c_waitForIdle();
- SSP1CON2bits.PEN=1;
+    i2c_waitForIdle();
+    SSP1CON2bits.PEN=1;
 }
 
 /******************************************************************************************/
 
 int i2c1_read( unsigned char ack )
 {
- unsigned char i2cReadData;
+    unsigned char i2cReadData;
 
- i2c_waitForIdle();
+    i2c_waitForIdle();
 
- SSP1CON2bits.RCEN=1;
+    SSP1CON2bits.RCEN=1;
 
- i2c_waitForIdle();
+    i2c_waitForIdle();
 
- i2cReadData = SSP1BUF;
+    i2cReadData = SSP1BUF;
 
- i2c_waitForIdle();
+    i2c_waitForIdle();
 
- if ( ack )
-  {
-  SSP1CON2bits.ACKDT=0;
-  }
- else
-  {
-  SSP1CON2bits.ACKDT=1;
-  }
-  SSP1CON2bits.ACKEN=1;               // send acknowledge sequence
+    if ( ack )
+    {
+        SSP1CON2bits.ACKDT=0;
+    }
+    else
+    {
+        SSP1CON2bits.ACKDT=1;
+    }
+        SSP1CON2bits.ACKEN=1;               // send acknowledge sequence
 
- return( i2cReadData );
+    return( i2cReadData );
 }
 
 /******************************************************************************************/
 
 unsigned char i2c1_write( unsigned char i2cWriteData )
 {
- i2c_waitForIdle();
- SSP1BUF = i2cWriteData;
+    i2c_waitForIdle();
+    SSP1BUF = i2cWriteData;
 
  return ( ! SSP1CON2bits.ACKSTAT  ); // function returns '1' if transmission is acknowledged
 }
@@ -273,8 +265,8 @@ void temp_init()
 {
     i2c1_start();
     
-	i2c1_write( 0x90 );
-	i2c1_write( 0XEE );
+	i2c1_write( 0x90 );     //probe addres
+	i2c1_write( 0XEE );     //reg to start temparure sampling
     
 	i2c1_stop();
     
@@ -284,12 +276,12 @@ int temp_read()
 {
     i2c1_start();
     
-	i2c1_write( 0x90 );
-	i2c1_write( 0xAA );
+	i2c1_write( 0x90 );     //probe addres + R
+	i2c1_write( 0xAA );     //probe writes 2 bytes for one temperature measurment
     
 	i2c1_repStart();
     
-    i2c1_write( 0x91 );
+    i2c1_write( 0x91 );     //probe addres + W 
     
 	char temp = i2c1_read(0);
 	char temp1 = i2c1_read(1);
