@@ -81,7 +81,7 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-    i2c_init();
+    i2c1_init();
     
     // === RUNNING ===
     /*
@@ -100,14 +100,14 @@ void main(void)
      * NOTE: PIC is sleeping and BBB wakes up the PIC to work.
      */
     
-    ConfTemp();
+    temp_init();
     
     int counter = 0;
     
      while(1)  
     {      
-        int temp = ReadTemp();
-        WriteMemory(counter, temp);
+        int temp = temp_read();
+        memory_write(counter, temp);
         
         counter += 2;
     }
@@ -117,7 +117,7 @@ void main(void)
 
 
 
-void i2c_init()
+void i2c1_init()
 {
    TRISCbits.RC3 =1;            // set SCL pin as input
    TRISCbits.RC4 =1;            // set SDA pin as input
@@ -135,16 +135,42 @@ void i2c_init()
  PIR2bits.BCL1IF=0;      // clear bus collision flag
 }
 
+void i2c2_Initialize(void)
+{
+    // initialize the hardware
+    // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP High Speed; UA dontupdate; CKE disabled; D_nA lastbyte_address; 
+    SSP2STAT = 0x00;
+    // SSPEN enabled; WCOL no_collision; CKP disabled; SSPM 7 Bit Polling; SSPOV no_overflow; 
+    SSP2CON1 = 0x26;
+    // ACKEN disabled; GCEN disabled; PEN disabled; ACKDT acknowledge; RSEN disabled; RCEN disabled; ACKSTAT received; SEN disabled; 
+    SSP2CON2 = 0x00;
+    // SBCDE disabled; BOEN disabled; SCIE disabled; PCIE disabled; DHEN disabled; SDAHT 100ns; AHEN disabled; 
+    SSP2CON3 = 0x00;
+    // MSK0 127; 
+    SSP2MSK = (0x00 << 1);  // adjust UI mask for R/nW bit            
+    // SSPADD 0; 
+    SSP2ADD = (0x7F << 1);  // adjust UI address for R/nW bit
+
+    // clear the slave interrupt flag
+    PIR3bits.SSP2IF = 0;
+    // enable the master interrupt
+    PIE3bits.SSP2IE = 1;
+    
+    TRISDbits.RD0=1;    //Setting as input as given in datasheet
+    TRISDbits.RD1=1;    //Setting as input as given in datasheet    
+
+}
+
 /******************************************************************************************/
 
-void i2c_waitForIdle()
+void i2c1_waitForIdle()
 {
  while (( SSP1CON2 & 0x1F ) | SSP1STATbits.RW ) {}; // wait for idle and not writing
 }
 
 /******************************************************************************************/
 
-void i2c_start()
+void i2c1_start()
 {
  i2c_waitForIdle();
  SSP1CON2bits.SEN=1;
@@ -152,7 +178,7 @@ void i2c_start()
 
 /******************************************************************************************/
 
-void i2c_repStart()
+void i2c1_repStart()
 {
  i2c_waitForIdle();
  SSP1CON2bits.RSEN=1;
@@ -160,7 +186,7 @@ void i2c_repStart()
 
 /******************************************************************************************/
 
-void i2c_stop()
+void i2c1_stop()
 {
  i2c_waitForIdle();
  SSP1CON2bits.PEN=1;
@@ -168,7 +194,7 @@ void i2c_stop()
 
 /******************************************************************************************/
 
-int i2c_read( unsigned char ack )
+int i2c1_read( unsigned char ack )
 {
  unsigned char i2cReadData;
 
@@ -197,7 +223,7 @@ int i2c_read( unsigned char ack )
 
 /******************************************************************************************/
 
-unsigned char i2c_write( unsigned char i2cWriteData )
+unsigned char i2c1_write( unsigned char i2cWriteData )
 {
  i2c_waitForIdle();
  SSP1BUF = i2cWriteData;
@@ -205,79 +231,70 @@ unsigned char i2c_write( unsigned char i2cWriteData )
  return ( ! SSP1CON2bits.ACKSTAT  ); // function returns '1' if transmission is acknowledged
 }
 
-void write_Arduino ()
+void memory_write (char mem, int value)
 {
-    i2c_start();
-    i2c_write( 0x90 );
-    i2c_write( 0xEE );
-    i2c_stop();
-
+    i2c1_start();
+    
+    i2c1_write( 0xA0 );
+    
+    i2c1_write( 0x00 );
+    i2c1_write( mem );
+    
+    i2c1_write( value>>8 );
+    i2c1_write( value );
+    
+    i2c1_stop();
 }
 
-void WriteMemory (char mem, int value)
+int memory_read(char mem)
 {
-    i2c_start();
+    i2c1_start();
     
-    i2c_write( 0xA0 );
+    i2c1_write( 0xA0 );
     
-    i2c_write( 0x00 );
-    i2c_write( mem );
+    i2c1_write( 0x00 );
+    i2c1_write( mem );
     
-    i2c_write( value>>8 );
-    i2c_write( value );
+    i2c1_repStart();
     
-    i2c_stop();
-}
-
-int ReadMemory (char mem)
-{
-    i2c_start();
+    i2c1_start( 0xA1 );
     
-    i2c_write( 0xA0 );
+    unsigned char temp = i2c1_read(0);
+    unsigned char temp1 = i2c1_read(1);
     
-    i2c_write( 0x00 );
-    i2c_write( mem );
-    
-    i2c_repStart();
-    
-    i2c_start( 0xA1 );
-    
-    unsigned char temp = i2c_read(0);
-    unsigned char temp1 = i2c_read(1);
-    
-    i2c_stop();
+    i2c1_stop();
     
     int t = (int) (temp<<8)+temp1;
     
     return t;
 }
 
-void ConfTemp()
+void temp_init()
 {
-    i2c_start();
+    i2c1_start();
     
-	i2c_write( 0x90 );
-	i2c_write( 0XEE );
+	i2c1_write( 0x90 );
+	i2c1_write( 0XEE );
     
-	i2c_stop();
+	i2c1_stop();
     
 }
 
-int ReadTemp()
+int temp_read()
 {
-    i2c_start();
+    i2c1_start();
     
-	i2c_write( 0x90 );
-	i2c_write( 0xAA );
+	i2c1_write( 0x90 );
+	i2c1_write( 0xAA );
     
-	i2c_repStart();
+	i2c1_repStart();
     
-    i2c_write( 0x91 );
+    i2c1_write( 0x91 );
     
-	char temp = i2c_read(0);
-	char temp1 = i2c_read(1);
+	char temp = i2c1_read(0);
+	char temp1 = i2c1_read(1);
     
-	i2c_stop();
+	i2c1_stop();
     
     int t = (int) (temp<<8)+temp1;
     
@@ -294,13 +311,6 @@ void write_msg( unsigned char address, unsigned char msg )
 }
 */
 
-void read_msg( unsigned char address, unsigned char msg )
-{
-    i2c_start();
-    i2c_write( 0x91 );
-    i2c_write( msg );
-    i2c_stop( );
-}
 /******************************************************************************************/
 
 /**

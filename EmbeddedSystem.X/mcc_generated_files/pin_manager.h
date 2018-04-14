@@ -79,6 +79,26 @@
 #define RC4_SetAnalogMode() do { ANSELCbits.ANSC4 = 1; } while(0)
 #define RC4_SetDigitalMode()do { ANSELCbits.ANSC4 = 0; } while(0)
 
+// get/set RD0 procedures
+#define RD0_SetHigh()    do { LATDbits.LATD0 = 1; } while(0)
+#define RD0_SetLow()   do { LATDbits.LATD0 = 0; } while(0)
+#define RD0_Toggle()   do { LATDbits.LATD0 = ~LATDbits.LATD0; } while(0)
+#define RD0_GetValue()         PORTDbits.RD0
+#define RD0_SetDigitalInput()   do { TRISDbits.TRISD0 = 1; } while(0)
+#define RD0_SetDigitalOutput()  do { TRISDbits.TRISD0 = 0; } while(0)
+#define RD0_SetAnalogMode() do { ANSELDbits.ANSD0 = 1; } while(0)
+#define RD0_SetDigitalMode()do { ANSELDbits.ANSD0 = 0; } while(0)
+
+// get/set RD1 procedures
+#define RD1_SetHigh()    do { LATDbits.LATD1 = 1; } while(0)
+#define RD1_SetLow()   do { LATDbits.LATD1 = 0; } while(0)
+#define RD1_Toggle()   do { LATDbits.LATD1 = ~LATDbits.LATD1; } while(0)
+#define RD1_GetValue()         PORTDbits.RD1
+#define RD1_SetDigitalInput()   do { TRISDbits.TRISD1 = 1; } while(0)
+#define RD1_SetDigitalOutput()  do { TRISDbits.TRISD1 = 0; } while(0)
+#define RD1_SetAnalogMode() do { ANSELDbits.ANSD1 = 1; } while(0)
+#define RD1_SetDigitalMode()do { ANSELDbits.ANSD1 = 0; } while(0)
+
 /**
    @Param
     none
