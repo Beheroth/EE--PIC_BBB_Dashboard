@@ -1,17 +1,116 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/i2c2.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
+typedef unsigned size_t;
+
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
+typedef int ptrdiff_t;
+
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h"
 extern volatile unsigned char ANSELA @ 0xF38;
 
 asm("ANSELA equ 0F38h");
@@ -8446,7 +8545,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -8473,398 +8572,164 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 92 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 104
-void PIN_MANAGER_IOC(void);
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
-typedef unsigned char bool;
-
-# 110 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
-
-# 122
-void INTERRUPT_Initialize (void);
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
-typedef unsigned size_t;
-
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stddef.h"
-typedef int ptrdiff_t;
-
-# 83 "mcc_generated_files/i2c1.h"
+# 78 "mcc_generated_files/i2c2.h"
 typedef enum
 {
-I2C1_MESSAGE_COMPLETE,
-I2C1_MESSAGE_FAIL,
-I2C1_MESSAGE_PENDING,
-I2C1_STUCK_START,
-I2C1_MESSAGE_ADDRESS_NO_ACK,
-I2C1_DATA_NO_ACK,
-I2C1_LOST_STATE
-} I2C1_MESSAGE_STATUS;
+I2C2_SLAVE_WRITE_REQUEST,
+I2C2_SLAVE_READ_REQUEST,
+I2C2_SLAVE_WRITE_COMPLETED,
+I2C2_SLAVE_READ_COMPLETED,
+} I2C2_SLAVE_DRIVER_STATUS;
 
-# 108
-typedef struct
+# 113
+void I2C2_Initialize(void);
+
+# 133
+void I2C2_ISR ( void );
+
+# 140
+extern volatile uint8_t I2C2_slaveWriteData;
+
+# 52 "mcc_generated_files/i2c2.c"
+typedef enum
 {
-uint16_t address;
+SLAVE_NORMAL_DATA,
+SLAVE_DATA_ADDRESS,
+} SLAVE_WRITE_DATA_TYPE;
 
+# 62
+volatile uint8_t I2C2_slaveWriteData = 0x55;
 
-uint8_t length;
-uint8_t *pbuffer;
-} I2C1_TRANSACTION_REQUEST_BLOCK;
+# 67
+void I2C2_StatusCallback(I2C2_SLAVE_DRIVER_STATUS i2c_bus_state);
 
-# 220
-void I2C1_Initialize(void);
-
-# 259
-void I2C1_MasterWrite(
-uint8_t *pdata,
-uint8_t length,
-uint16_t address,
-I2C1_MESSAGE_STATUS *pstatus);
-
-# 406
-void I2C1_MasterRead(
-uint8_t *pdata,
-uint8_t length,
-uint16_t address,
-I2C1_MESSAGE_STATUS *pstatus);
-
-# 516
-void I2C1_MasterTRBInsert(
-uint8_t count,
-I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
-I2C1_MESSAGE_STATUS *pflag);
-
-# 560
-void I2C1_MasterReadTRBBuild(
-I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-uint8_t *pdata,
-uint8_t length,
-uint16_t address);
-
-# 605
-void I2C1_MasterWriteTRBBuild(
-I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-uint8_t *pdata,
-uint8_t length,
-uint16_t address);
-
-# 647
-bool I2C1_MasterQueueIsEmpty(void);
-
-# 685
-bool I2C1_MasterQueueIsFull(void);
-void I2C1_BusCollisionISR( void );
-void I2C1_ISR ( void );
-
-# 69 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 82
-void OSCILLATOR_Initialize(void);
-
-# 50 "main.c"
-int ReadTemp();
-void ConfTemp();
-void write_Arduino();
-void i2c_init();
-void i2c_waitForIdle();
-void i2c_start();
-void i2c_repStart();
-void i2c_stop();
-int i2c_read( unsigned char ack );
-unsigned char i2c_write( unsigned char i2cWriteData );
-
-
-
-void main(void)
+# 81
+void I2C2_Initialize(void)
 {
 
 
-SYSTEM_Initialize();
+SSP2STAT = 0x00;
 
-# 84
-i2c_init();
+SSP2CON1 = 0x26;
 
-# 94
-ConfTemp();
-while(1)
-{
-int temp = ReadTemp();
-}
+SSP2CON2 = 0x00;
 
+SSP2CON3 = 0x00;
+
+SSP2MSK = (0x7F << 1);
+
+SSP2ADD = (0x00 << 1);
+
+
+PIR3bits.SSP2IF = 0;
+
+PIE3bits.SSP2IE = 1;
 
 }
 
-
-
-void i2c_init()
+void I2C2_ISR ( void )
 {
-TRISCbits.RC3 =1;
-TRISCbits.RC4 =1;
+uint8_t i2c_data = 0x55;
 
-SSP1CON1 = 0x38;
-SSP1CON2 = 0x00;
-
-
-SSP1ADD = 10;
-
-SSP1STATbits.CKE =0;
-SSP1STATbits.SMP =0;
-
-PIR1bits.SSP1IF=0;
-PIR2bits.BCL1IF=0;
-}
-
-
-
-void i2c_waitForIdle()
+# 112
+PIR3bits.SSP2IF = 0;
+i2c_data = SSP2BUF;
+if(1 == SSP2STATbits.R_nW)
 {
-while (( SSP1CON2 & 0x1F ) | SSP1STATbits.RW ) {};
-}
-
-
-
-void i2c_start()
+if((1 == SSP2STATbits.D_nA) && (1 == SSP2CON2bits.ACKSTAT))
 {
-i2c_waitForIdle();
-SSP1CON2bits.SEN=1;
-}
 
-
-
-void i2c_repStart()
-{
-i2c_waitForIdle();
-SSP1CON2bits.RSEN=1;
-}
-
-
-
-void i2c_stop()
-{
-i2c_waitForIdle();
-SSP1CON2bits.PEN=1;
-}
-
-
-
-int i2c_read( unsigned char ack )
-{
-unsigned char i2cReadData;
-
-i2c_waitForIdle();
-
-SSP1CON2bits.RCEN=1;
-
-i2c_waitForIdle();
-
-i2cReadData = SSP1BUF;
-
-i2c_waitForIdle();
-
-if ( ack )
-{
-SSP1CON2bits.ACKDT=0;
+I2C2_StatusCallback(I2C2_SLAVE_READ_COMPLETED);
 }
 else
 {
-SSP1CON2bits.ACKDT=1;
+
+I2C2_StatusCallback(I2C2_SLAVE_READ_REQUEST);
 }
-SSP1CON2bits.ACKEN=1;
-
-return( i2cReadData );
 }
-
-
-
-unsigned char i2c_write( unsigned char i2cWriteData )
+else if(0 == SSP2STATbits.D_nA)
 {
-i2c_waitForIdle();
-SSP1BUF = i2cWriteData;
 
-return ( ! SSP1CON2bits.ACKSTAT );
+
+
+I2C2_StatusCallback(I2C2_SLAVE_WRITE_REQUEST);
+}
+else
+{
+I2C2_slaveWriteData = i2c_data;
+
+
+I2C2_StatusCallback(I2C2_SLAVE_WRITE_COMPLETED);
 }
 
-void write_Arduino ()
-{
-i2c_start();
-i2c_write( 0x90 );
-i2c_write( 0xEE );
-i2c_stop();
-
-}
-
-void WriteMemory (char mem, int value)
-{
-i2c_start();
-
-i2c_write( 0xA0 );
-
-i2c_write( 0x00 );
-i2c_write( mem );
-
-i2c_write( value>>8 );
-i2c_write( value );
-
-i2c_stop();
-}
-
-int ReadMemory (char mem)
-{
-i2c_start();
-
-i2c_write( 0xA0 );
-
-i2c_write( 0x00 );
-i2c_write( mem );
-
-i2c_repStart();
-
-i2c_start( 0xA1 );
-
-unsigned char temp = i2c_read(0);
-unsigned char temp1 = i2c_read(1);
-
-i2c_stop();
-
-int t = (int) (temp<<8)+temp1;
-
-return t;
-}
-
-void ConfTemp()
-{
-i2c_start();
-
-i2c_write( 0x90 );
-i2c_write( 0XEE );
-
-i2c_stop();
+SSP2CON1bits.CKP = 1;
 
 }
 
-int ReadTemp()
+# 168
+void I2C2_StatusCallback(I2C2_SLAVE_DRIVER_STATUS i2c_bus_state)
 {
-i2c_start();
 
-i2c_write( 0x90 );
-i2c_write( 0xAA );
+static uint8_t EEPROM_Buffer[] =
+{
+0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,
+0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1a,0x1b,0x1c,0x1d,0x1e,0x1f,
+0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x28,0x29,0x2a,0x2b,0x2c,0x2d,0x2e,0x2f,
+0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x3a,0x3b,0x3c,0x3d,0x3e,0x3f,
+0x40,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4a,0x4b,0x4c,0x4d,0x4e,0x4f,
+0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5a,0x5b,0x5c,0x5d,0x5e,0x5f,
+0x60,0x61,0x62,0x63,0x64,0x65,0x66,0x67,0x68,0x69,0x6a,0x6b,0x6c,0x6d,0x6e,0x6f,
+0x70,0x71,0x72,0x73,0x74,0x75,0x76,0x77,0x78,0x79,0x7a,0x7b,0x7c,0x7d,0x7e,0x7f,
+};
 
-i2c_repStart();
+static uint8_t eepromAddress = 0;
+static uint8_t slaveWriteType = SLAVE_NORMAL_DATA;
 
-i2c_write( 0x91 );
 
-char temp = i2c_read(0);
-char temp1 = i2c_read(1);
+switch (i2c_bus_state)
+{
+case I2C2_SLAVE_WRITE_REQUEST:
 
-i2c_stop();
+slaveWriteType = SLAVE_DATA_ADDRESS;
+break;
 
-int t = (int) (temp<<8)+temp1;
 
-return t;
+case I2C2_SLAVE_WRITE_COMPLETED:
+
+switch(slaveWriteType)
+{
+case SLAVE_DATA_ADDRESS:
+eepromAddress = I2C2_slaveWriteData;
+break;
+
+
+case SLAVE_NORMAL_DATA:
+default:
+
+EEPROM_Buffer[eepromAddress++] = I2C2_slaveWriteData;
+if(sizeof(EEPROM_Buffer) <= eepromAddress)
+{
+eepromAddress = 0;
+}
+break;
+
 }
 
-# 282
-void read_msg( unsigned char address, unsigned char msg )
+slaveWriteType = SLAVE_NORMAL_DATA;
+break;
+
+case I2C2_SLAVE_READ_REQUEST:
+SSP2BUF = EEPROM_Buffer[eepromAddress++];
+if(sizeof(EEPROM_Buffer) <= eepromAddress)
 {
-i2c_start();
-i2c_write( 0x91 );
-i2c_write( msg );
-i2c_stop( );
+eepromAddress = 0;
+}
+break;
+
+case I2C2_SLAVE_READ_COMPLETED:
+default:;
+
+}
+
 }
 

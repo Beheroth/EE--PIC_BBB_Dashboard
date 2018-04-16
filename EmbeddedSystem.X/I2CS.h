@@ -12,6 +12,9 @@
 
 #include "stdio.h"
 
+#define I2C2_SLAVE_ADDRESS 0x00 
+#define I2C2_SLAVE_MASK    0x7F
+
 #define I2C_BUFFER_LENGHT       10
 #define I2CS_WRITE               0x01
 #define I2CS_READ                0x00
@@ -19,7 +22,7 @@
 typedef struct{
     unsigned long tx_buffer[I2C_BUFFER_LENGHT];
     unsigned long rx_buffer[I2C_BUFFER_LENGHT];
-    unsigned long mode;
+    unsigned long mode;         //the mode should only be managed by I2CS.c
     unsigned char tx_to_process;  
     unsigned char rx_to_process;
     unsigned char tx_cursor;    

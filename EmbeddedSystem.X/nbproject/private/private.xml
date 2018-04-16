@@ -3,14 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/main.h</file>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/i2c2.h</file>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/main.c</file>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/I2CS.h</file>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/interrupt_manager.h</file>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/mcc.h</file>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/I2CS.c</file>
-            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/Ingenieur%20Industriel%20ECAM/BA3/Electronique%20embarquée/Projet%20PIC%20BBB%20Dashboard/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/interrupt_manager.c</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/mcc.c</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/interrupt_manager.c</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/main.h</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/i2c2.c</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/i2c1.c</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/main.c</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/mcc_generated_files/interrupt_manager.h</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/I2CS.h</file>
+            <file>file:/C:/Users/Arnaud/Documents/TRAVAIL/ECAM/BA3/Electronique%20Embarquée/Projet/EE--PIC_BBB_Dashboard/EmbeddedSystem.X/I2CS.c</file>
         </group>
     </open-files>
 </project-private>

@@ -1,23 +1,7 @@
 
-# 1 "mcc_generated_files/interrupt_manager.c"
+# 1 "I2CS.c"
 
-# 110 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
-
-# 122
-void INTERRUPT_Initialize (void);
-
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h"
 extern volatile unsigned char ANSELA @ 0xF38;
 
 asm("ANSELA equ 0F38h");
@@ -8452,232 +8436,170 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h"
-__attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
-__attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
-
-
-# 42
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-# 135
-__attribute__((__unsupported__("The " "Read_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) unsigned char Read_b_eep(unsigned int badd);
-__attribute__((__unsupported__("The " "Busy_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Busy_eep(void);
-__attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
-
-# 155
-unsigned char __t1rd16on(void);
-unsigned char __t3rd16on(void);
-
-
-# 163
-#pragma intrinsic(_delay)
-extern __nonreentrant void _delay(unsigned long);
-#pragma intrinsic(_delaywdt)
-extern __nonreentrant void _delaywdt(unsigned long);
-#pragma intrinsic(_delay3)
-extern __nonreentrant void _delay3(unsigned char);
-
-# 92 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 104
-void PIN_MANAGER_IOC(void);
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdbool.h"
-typedef unsigned char bool;
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stddef.h"
-typedef int ptrdiff_t;
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
+typedef void * va_list[1];
 
-# 83 "mcc_generated_files/i2c1.h"
-typedef enum
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+struct __prbuf
 {
-I2C1_MESSAGE_COMPLETE,
-I2C1_MESSAGE_FAIL,
-I2C1_MESSAGE_PENDING,
-I2C1_STUCK_START,
-I2C1_MESSAGE_ADDRESS_NO_ACK,
-I2C1_DATA_NO_ACK,
-I2C1_LOST_STATE
-} I2C1_MESSAGE_STATUS;
+char * ptr;
+void (* func)(char);
+};
 
-# 108
-typedef struct
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 22 "I2CS.h"
+typedef struct{
+unsigned long tx_buffer[10];
+unsigned long rx_buffer[10];
+unsigned long mode;
+unsigned char tx_to_process;
+unsigned char rx_to_process;
+unsigned char tx_cursor;
+unsigned char rx_cursor;
+unsigned char slaveAddr;
+}I2CS_Handler_t;
+
+void I2CS_Init(I2CS_Handler_t *hI2C);
+void I2CS_WriteByte(I2CS_Handler_t *hI2C, unsigned char slaveAddr, unsigned char reg, unsigned char data) ;
+void I2CS_ReadByte(I2CS_Handler_t *hI2C, unsigned char slaveAddr, unsigned char reg);
+void I2CS_Start(I2CS_Handler_t *hI2C);
+
+# 13 "I2CS.c"
+I2CS_Handler_t *hI2CS_2 = (0);
+
+
+
+void I2CS_Init(I2CS_Handler_t *hI2CS)
 {
-uint16_t address;
 
 
-uint8_t length;
-uint8_t *pbuffer;
-} I2C1_TRANSACTION_REQUEST_BLOCK;
 
-# 220
-void I2C1_Initialize(void);
 
-# 259
-void I2C1_MasterWrite(
-uint8_t *pdata,
-uint8_t length,
-uint16_t address,
-I2C1_MESSAGE_STATUS *pstatus);
+SSP2STAT = 0x00;
 
-# 406
-void I2C1_MasterRead(
-uint8_t *pdata,
-uint8_t length,
-uint16_t address,
-I2C1_MESSAGE_STATUS *pstatus);
+SSP2CON1 = 0x26;
 
-# 516
-void I2C1_MasterTRBInsert(
-uint8_t count,
-I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
-I2C1_MESSAGE_STATUS *pflag);
+SSP2CON2 = 0x00;
 
-# 560
-void I2C1_MasterReadTRBBuild(
-I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-uint8_t *pdata,
-uint8_t length,
-uint16_t address);
+SSP2CON3 = 0x00;
 
-# 605
-void I2C1_MasterWriteTRBBuild(
-I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-uint8_t *pdata,
-uint8_t length,
-uint16_t address);
+SSP2MSK = (0x7F << 1);
 
-# 647
-bool I2C1_MasterQueueIsEmpty(void);
+SSP2ADD = (0x00 << 1);
 
-# 685
-bool I2C1_MasterQueueIsFull(void);
-void I2C1_BusCollisionISR( void );
-void I2C1_ISR ( void );
 
-# 69 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
+PIR3bits.SSP2IF = 0;
 
-# 82
-void OSCILLATOR_Initialize(void);
+PIE3bits.SSP2IE = 1;
 
-# 51 "mcc_generated_files/interrupt_manager.c"
-void INTERRUPT_Initialize (void)
-{
+TRISDbits.RD0=1;
+TRISDbits.RD1=1;
 
-RCONbits.IPEN = 0;
+hI2CS_2 = hI2CS;
+hI2CS->mode = 3;
 }
 
-void interrupt INTERRUPT_InterruptManager (void)
-{
 
-if(INTCONbits.PEIE == 1 && PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
+void I2CS_ISR()
 {
-I2C1_BusCollisionISR();
-}
-else if(INTCONbits.PEIE == 1 && PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
+PIR3bits.SSP2IF = 0;
+if(hI2CS_2->mode == 0 & hI2CS_2->rx_to_process)
+
 {
-I2C1_ISR();
+hI2CS_2->rx_buffer[hI2CS_2->rx_cursor++] = SSP2BUF;
+hI2CS_2->rx_to_process--;
+
+if(hI2CS_2->rx_to_process == 0)
+{
+unsigned long reg = hI2CS_2->rx_buffer[0];
+switch(reg)
+{
+case 0x0F:
+
+
+
+break;
 }
+
+hI2CS_2->mode = 3;
+}
+}
+
+if(hI2CS_2->mode == 1 & hI2CS_2->tx_to_process)
+{
+SSP2BUF = hI2CS_2->tx_buffer[hI2CS_2->tx_cursor++];
+hI2CS_2->tx_to_process--;
+}
+
+else if(hI2CS_2->mode > 1)
+{
+hI2CS_2->mode = SSP2BUF && 0x01;
+if(hI2CS_2->mode == 0)
+{
+hI2CS_2->rx_to_process = 1;
+hI2CS_2->rx_cursor = 0;
+}
+if(hI2CS_2->mode == 1)
+{
+hI2CS_2->tx_to_process = 2;
+hI2CS_2->tx_cursor = 0;
+}
+}
+
 else
 {
-
+hI2CS_2->mode = 3;
 }
 }
-

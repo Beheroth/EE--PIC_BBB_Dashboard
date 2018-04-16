@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"15832 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
+"15832 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
 [s S748 :1 `uc 1 ]
 [n S748 . NOT_BOR ]
 "15835
@@ -69,7 +69,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR2bits `VS445 ~T0 @X0 0 e@4001 ]
 "686 mcc_generated_files/i2c1.h
 [v _I2C1_BusCollisionISR `(v ~T0 @X0 0 ef ]
-"9418 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
+"9418 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
 [s S433 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S433 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE ]
 "9427
@@ -93,13 +93,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS435 ~T0 @X0 0 e@3998 ]
 "687 mcc_generated_files/i2c1.h
 [v _I2C1_ISR `(v ~T0 @X0 0 ef ]
+"9907 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+[s S454 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S454 . TMR1GIE TMR3GIE TMR5GIE CTMUIE TX2IE RC2IE BCL2IE SSP2IE ]
+"9917
+[s S455 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S455 . RXB0IE RXB1IE TXB0IE TXB1IE TXB2IE ]
+"9924
+[s S456 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S456 . . RXBNIE . TXBNIE ]
+"9906
+[u S453 `S454 1 `S455 1 `S456 1 ]
+[n S453 . . . . ]
+"9931
+[v _PIE3bits `VS453 ~T0 @X0 0 e@4003 ]
+"10017
+[s S458 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S458 . TMR1GIF TMR3GIF TMR5GIF CTMUIF TX2IF RC2IF BCL2IF SSP2IF ]
+"10027
+[s S459 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S459 . . RXBNIF . TXBNIF ]
+"10016
+[u S457 `S458 1 `S459 1 ]
+[n S457 . . . ]
+"10034
+[v _PIR3bits `VS457 ~T0 @X0 0 e@4004 ]
+"133 mcc_generated_files/i2c2.h
+[v _I2C2_ISR `(v ~T0 @X0 0 ef ]
 [; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
 [; ;interrupt_manager.h: 122: void INTERRUPT_Initialize (void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 50: extern volatile unsigned char ANSELA @ 0xF38;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
 [; ;pic18f46k22.h: 52: asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
 [; ;pic18f46k22.h: 55: typedef union {
@@ -6658,8 +6685,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 92: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 104: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 112: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 124: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -6736,8 +6763,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c1.h: 685: bool I2C1_MasterQueueIsFull(void);
 [; ;i2c1.h: 686: void I2C1_BusCollisionISR( void );
 [; ;i2c1.h: 687: void I2C1_ISR ( void );
-[; ;mcc.h: 69: void SYSTEM_Initialize(void);
-[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
+[; ;i2c2.h: 78: typedef enum
+[; ;i2c2.h: 79: {
+[; ;i2c2.h: 80: I2C2_SLAVE_WRITE_REQUEST,
+[; ;i2c2.h: 81: I2C2_SLAVE_READ_REQUEST,
+[; ;i2c2.h: 82: I2C2_SLAVE_WRITE_COMPLETED,
+[; ;i2c2.h: 83: I2C2_SLAVE_READ_COMPLETED,
+[; ;i2c2.h: 84: } I2C2_SLAVE_DRIVER_STATUS;
+[; ;i2c2.h: 113: void I2C2_Initialize(void);
+[; ;i2c2.h: 133: void I2C2_ISR ( void );
+[; ;i2c2.h: 140: extern volatile uint8_t I2C2_slaveWriteData;
+[; ;mcc.h: 70: void SYSTEM_Initialize(void);
+[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
 "51 mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
 "52
@@ -6792,16 +6829,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 855  ]
 "68
 [e :U 854 ]
-[; ;interrupt_manager.c: 68: else
+[; ;interrupt_manager.c: 68: else if(INTCONbits.PEIE == 1 && PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
+[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE3bits 0 7 `i -> 1 `i == -> . . _PIR3bits 0 7 `i -> 1 `i 856  ]
 [; ;interrupt_manager.c: 69: {
 "69
 {
+[; ;interrupt_manager.c: 70: I2C2_ISR();
+"70
+[e ( _I2C2_ISR ..  ]
 "71
 }
+[; ;interrupt_manager.c: 71: }
+[e $U 857  ]
+"72
+[e :U 856 ]
+[; ;interrupt_manager.c: 72: else
+[; ;interrupt_manager.c: 73: {
+"73
+{
+"75
+}
+[e :U 857 ]
 [e :U 855 ]
 [e :U 853 ]
-[; ;interrupt_manager.c: 71: }
-[; ;interrupt_manager.c: 72: }
-"72
+[; ;interrupt_manager.c: 75: }
+[; ;interrupt_manager.c: 76: }
+"76
 [e :UE 851 ]
 }

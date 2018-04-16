@@ -42,9 +42,9 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "main.h"
-#include "I2CS.h"
 
-#define TEMP = 0x48
+
+#define TEMP = 0x48     //[todo]what does it define exaclty?
 
 /*
                          Main application
@@ -62,13 +62,13 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
@@ -91,26 +91,18 @@ void main(void)
      * NOTE: PIC is sleeping and BBB wakes up the PIC to work.
      */
     
-    I2CS_Handler_t i2c1;
+    I2CS_Handler_t hI2CS;
     
-    temp_init();
+    I2CS_Init(&hI2CS);
+    temp_init(&hI2CS);
     
-    int counter = 0;
-    
-     while(1)  
-    {      
-        int temp = temp_read();
-        memory_write(counter, temp);
-        
-        counter += 2;
-    }
-    
-
+    //[todo] PIC enters idle mode and waits to be awaken by I2C2 (BBB) 
+    //interruption caused by a write request
 }
 
 
 
-void i2c1_init()
+void i2c1_init(void)
 {
     TRISCbits.RC3 =1;            // set SCL pin as input
     TRISCbits.RC4 =1;            // set SDA pin as input
@@ -129,35 +121,35 @@ void i2c1_init()
     
 }
 
-void i2c2_Initialize(void)
-{
-    // initialize the hardware
-    // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP High Speed; UA dontupdate; CKE disabled; D_nA lastbyte_address; 
-    SSP2STAT = 0x00;
-    // SSPEN enabled; WCOL no_collision; CKP disabled; SSPM 7 Bit Polling; SSPOV no_overflow; 
-    SSP2CON1 = 0x26;
-    // ACKEN disabled; GCEN disabled; PEN disabled; ACKDT acknowledge; RSEN disabled; RCEN disabled; ACKSTAT received; SEN disabled; 
-    SSP2CON2 = 0x00;
-    // SBCDE disabled; BOEN disabled; SCIE disabled; PCIE disabled; DHEN disabled; SDAHT 100ns; AHEN disabled; 
-    SSP2CON3 = 0x00;
-    // MSK0 127; 
-    SSP2MSK = (0x00 << 1);  // adjust UI mask for R/nW bit            
-    // SSPADD 0; 
-    SSP2ADD = (0x7F << 1);  // adjust UI address for R/nW bit
-
-    // clear the slave interrupt flag
-    PIR3bits.SSP2IF = 0;
-    // enable the master interrupt
-    PIE3bits.SSP2IE = 1;
-    
-    TRISDbits.RD0=1;    //Setting as input as given in datasheet
-    TRISDbits.RD1=1;    //Setting as input as given in datasheet    
-
-}
+//void i2c2_Initialize(void)
+//{
+//    // initialize the hardware
+//    // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP High Speed; UA dontupdate; CKE disabled; D_nA lastbyte_address; 
+//    SSP2STAT = 0x00;
+//    // SSPEN enabled; WCOL no_collision; CKP disabled; SSPM 7 Bit Polling; SSPOV no_overflow; 
+//    SSP2CON1 = 0x26;
+//    // ACKEN disabled; GCEN disabled; PEN disabled; ACKDT acknowledge; RSEN disabled; RCEN disabled; ACKSTAT received; SEN disabled; 
+//    SSP2CON2 = 0x00;
+//    // SBCDE disabled; BOEN disabled; SCIE disabled; PCIE disabled; DHEN disabled; SDAHT 100ns; AHEN disabled; 
+//    SSP2CON3 = 0x00;
+//    // MSK0 127; 
+//    SSP2MSK = (0x00 << 1);  // adjust UI mask for R/nW bit            
+//    // SSPADD 0; 
+//    SSP2ADD = (0x7F << 1);  // adjust UI address for R/nW bit
+//
+//    // clear the slave interrupt flag
+//    PIR3bits.SSP2IF = 0;
+//    // enable the master interrupt
+//    PIE3bits.SSP2IE = 1;
+//    
+//    TRISDbits.RD0=1;    //Setting as input as given in datasheet
+//    TRISDbits.RD1=1;    //Setting as input as given in datasheet    
+//
+//}
 
 /******************************************************************************************/
 
-void i2c1_waitForIdle()
+void i2c1_waitForIdle(void)
 {
     while (( SSP1CON2 & 0x1F ) | SSP1STATbits.RW ) {}; // wait for idle and not writing
     //Concerned SSP1CON bits are, Acknowledge sequence, Receive, Stop condition, Repeated Start condition, Start condition
@@ -165,25 +157,25 @@ void i2c1_waitForIdle()
 
 /******************************************************************************************/
 
-void i2c1_start()
+void i2c1_start(void)
 {
-    i2c_waitForIdle();
+    i2c1_waitForIdle();
     SSP1CON2bits.SEN=1;
 }
 
 /******************************************************************************************/
 
-void i2c1_repStart()
+void i2c1_repStart(void)
 {
-    i2c_waitForIdle();
+    i2c1_waitForIdle();
     SSP1CON2bits.RSEN=1;
 }
 
 /******************************************************************************************/
 
-void i2c1_stop()
+void i2c1_stop(void)
 {
-    i2c_waitForIdle();
+    i2c1_waitForIdle();
     SSP1CON2bits.PEN=1;
 }
 
@@ -193,15 +185,15 @@ int i2c1_read( unsigned char ack )
 {
     unsigned char i2cReadData;
 
-    i2c_waitForIdle();
+    i2c1_waitForIdle();
 
     SSP1CON2bits.RCEN=1;
 
-    i2c_waitForIdle();
+    i2c1_waitForIdle();
 
     i2cReadData = SSP1BUF;
 
-    i2c_waitForIdle();
+    i2c1_waitForIdle();
 
     if ( ack )
     {
@@ -220,103 +212,103 @@ int i2c1_read( unsigned char ack )
 
 unsigned char i2c1_write( unsigned char i2cWriteData )
 {
-    i2c_waitForIdle();
+    i2c1_waitForIdle();
     SSP1BUF = i2cWriteData;
 
- return ( ! SSP1CON2bits.ACKSTAT  ); // function returns '1' if transmission is acknowledged
+    return ( ! SSP1CON2bits.ACKSTAT  ); // function returns '1' if transmission is acknowledged
 }
 
 /******************************************************************************************/
 
-void memory_write (I2CS_Handler_t *I2CS, char mem, char t1, char t2)
+//void memory_write (I2CS_Handler_t *hI2CS, char mem, char t1, char t2)
+//{
+//    hI2CS->slaveAddr = 0x50;     // memory address
+//    hI2CS->mode = I2CS_READ;     // mode read
+//    
+//    hI2CS->tx_buffer[0] = mem+1;    // address high byte
+//    hI2CS->tx_buffer[1] = mem;      // address low byte
+//    
+//    hI2CS->tx_buffer[2] = t1;       // mesure temp 1
+//    hI2CS->tx_buffer[3] = t2;       // mesure temp 2
+//
+//    hI2CS->tx_to_process = 4;
+//
+//    i2c1_start();
+//    
+//    i2c1_write( 0xA0 );     //[todo] what address is this?
+//    
+//    i2c1_write( 0x00 );     //[todo] what instruction is this?
+//    i2c1_write( mem );      
+//    
+//    i2c1_write( value>>8 ); 
+//    i2c1_write( value );
+//    
+//    i2c1_stop();
+//
+//}
+//
+//char memory_read(I2CS_Handler_t *hI2CS, char mem)
+//{
+//    hI2CS->slaveAddr = 0x50;
+//    hI2CS->mode = I2CS_READ;
+//    
+//    hI2CS->tx_buffer[0] = mem+1;
+//    hI2CS->tx_buffer[1] = mem;
+//    
+//    hI2CS->tx_to_process = 2;
+//    
+//    /* restart */
+//    
+////    I2CS->mode I2CS_WRITE;
+//    
+//    char t[2];
+//    t[0] = hI2CS->rx_buffer[0];
+//    t[1] = hI2CS->rx_buffer[1];
+//    
+//    hI2CS->rx_to_process = 2;
+//    
+//    return t;
+//    /*
+//    i2c1_start();
+//    
+//    i2c1_write( 0xA0 );
+//    
+//    i2c1_write( 0x00 );
+//    i2c1_write( mem );
+//    
+//    i2c1_repStart();
+//    
+//    i2c1_start( 0xA1 );
+//    
+//    unsigned char temp = i2c1_read(0);
+//    unsigned char temp1 = i2c1_read(1);
+//    
+//    i2c1_stop();
+//    
+//    int t = (int) (temp<<8)+temp1;
+//    
+//    return t;
+//    */
+//}
+
+void temp_init(I2CS_Handler_t *hI2CS)
 {
-    I2CS->slaveAddr = 0x50;     // memory address
-    I2CS->mode = I2CS_READ;     // mode read
+    //[todo] initializing temp sensor chould not modify hI2CS handler
+    hI2CS->slaveAddr = 0x48;     // probe address
     
-    I2CS->tx_buffer = mem+1;    // address high byte
-    I2CS->tx_buffer = mem;      // address low byte
-    
-    I2CS->tx_buffer = t1;       // mesure temp 1
-    I2CS->tx_buffer = t2;       // mesure temp 2
-    
-    I2CS->tx_to_process = 4;
-    /*
-    i2c1_start();
-    
-    i2c1_write( 0xA0 );
-    
-    i2c1_write( 0x00 );
-    i2c1_write( mem );
-    
-    i2c1_write( value>>8 );
-    i2c1_write( value );
-    
-    i2c1_stop();
-    */
+    hI2CS->tx_buffer[0] = 0xEE;     // message to send, settings to start temperature sampling
+    hI2CS->tx_to_process = 1;
 }
 
-char memory_read(I2CS_Handler_t *I2CS, char mem)
+void temp_read(I2CS_Handler_t *hI2CS)
 {
-    I2CS->slaveAddr = 0x50;
-    I2CS->mode = I2CS_READ;
     
-    I2CS->tx_buffer = mem+1;
-    I2CS->tx_buffer = mem;
-    
-    I2CS->tx_to_process = 2;
-    
-    /* restart */
-    
-    I2CS->mode I2CS_WRITE;
-    
-    char t[2];
-    t[0] = I2CS->rx_buffer;
-    t[1] = I2CS->rx_buffer;
-    
-    I2CS->rx_to_process = 2;
-    
-    return t;
-    /*
-    i2c1_start();
-    
-    i2c1_write( 0xA0 );
-    
-    i2c1_write( 0x00 );
-    i2c1_write( mem );
-    
-    i2c1_repStart();
-    
-    i2c1_start( 0xA1 );
-    
-    unsigned char temp = i2c1_read(0);
-    unsigned char temp1 = i2c1_read(1);
-    
-    i2c1_stop();
-    
-    int t = (int) (temp<<8)+temp1;
-    
-    return t;
-    */
-}
+//    I2CS->slaveAddr = 0x48;     //  probe address
+//    I2CS->mode = I2CS_READ;     // mode read
+//    I2CS->tx_buffer[0] = 0xAA;     // probe write 2 bytes for one temperature measurement
+//    I2CS->tx_to_process = 1;
+  
 
-void temp_init(I2CS_Handler_t *I2CS)
-{
-    I2CS->slaveAddr = 0x48;     // probe address
-    I2CS->mode = I2CS_READ;     // mode read
-    
-    I2CS->tx_buffer = 0xEE;     // message to send, settings to start temperature sampling
-    I2CS->tx_to_process = 1;
-}
-
-int temp_read(I2CS_Handler_t *I2CS)
-{
-    
-    I2CS->slaveAddr = 0x48;     //  probe address
-    I2CS->mode = I2CS_READ;     // mode read
-    I2CS->tx_buffer = 0xAA;     // probe write 2 bytes for one temperature measurement
-    I2CS->tx_to_process = 1;
-    
-    /*
     i2c1_start();
     
 	i2c1_write( 0x90 );     //probe addres + R
@@ -326,15 +318,15 @@ int temp_read(I2CS_Handler_t *I2CS)
     
     i2c1_write( 0x91 );     //probe addres + W 
     
-	char temp = i2c1_read(0);
-	char temp1 = i2c1_read(1);
+	hI2CS->tx_buffer[0] = i2c1_read(0);
+	hI2CS->tx_buffer[1] = i2c1_read(1);
     
 	i2c1_stop();
     
-    int t = (int) (temp<<8)+temp1;
-       
-    return t;
-    */
+//    int t = (int) (temp<<8) | temp1;        //concatenates 2 bytes
+//       
+//    return t;
+
 }
 
 /*
