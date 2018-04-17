@@ -57,7 +57,27 @@ void  INTERRUPT_Initialize (void)
 void interrupt INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-    if(INTCONbits.PEIE == 1 && PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
+    if(INTCONbits.PEIE == 1 && PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
+    {
+        I2CS_Handler_t i2c2;
+        if (i2c2->rx_buffer)
+        {        
+            char mem = 0x00;
+            char temp[2]; 
+
+            char temp = temp_read();
+            memory_write(mem, temp);
+            
+            i2c2->tx_buffer = temp ;
+            i2c2->rx_to_process = 2 ;            
+        }
+        else
+        {
+            //Nothing
+        }
+            
+    }
+    else if(INTCONbits.PEIE == 1 && PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
     {
         I2C1_BusCollisionISR();
     }
@@ -65,10 +85,7 @@ void interrupt INTERRUPT_InterruptManager (void)
     {
         I2C1_ISR();
     }
-    else if(INTCONbits.PEIE == 1 && PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
-    {
-        I2C2_ISR();
-    }
+   
     else
     {
         //Unhandled Interrupt

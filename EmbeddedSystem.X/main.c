@@ -62,7 +62,7 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -74,35 +74,15 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     i2c1_init();
     
-    // === RUNNING ===
-    /*
-     * Configure Temp
-     * Configure Memory
-     * 
-     * Counter by 2 (ask by BBB)
-     *     - Ask temp
-     *     - Write Temp in Mem (place via counter (2 bytes))
-     * 
-     * BBB ask Values Temp
-     *     - Read all Memory up to counter (by 2)
-     *     - give it to BBB
-     *     - Reset Counter
-     * 
-     * NOTE: PIC is sleeping and BBB wakes up the PIC to work.
-     */
-    
-    I2CS_Handler_t i2c1;
-    
     temp_init();
     
     int counter = 0;
     
+    OSCCONbits.IDLEN = 0;
+    
      while(1)  
     {      
-        int temp = temp_read();
-        memory_write(counter, temp);
-        
-        counter += 2;
+        SLEEP();
     }
     
 
@@ -228,55 +208,23 @@ unsigned char i2c1_write( unsigned char i2cWriteData )
 
 /******************************************************************************************/
 
-void memory_write (I2CS_Handler_t *I2CS, char mem, char t1, char t2)
+void memory_write (char mem, char *temp)
 {
-    I2CS->slaveAddr = 0x50;     // memory address
-    I2CS->mode = I2CS_READ;     // mode read
-    
-    I2CS->tx_buffer = mem+1;    // address high byte
-    I2CS->tx_buffer = mem;      // address low byte
-    
-    I2CS->tx_buffer = t1;       // mesure temp 1
-    I2CS->tx_buffer = t2;       // mesure temp 2
-    
-    I2CS->tx_to_process = 4;
-    /*
     i2c1_start();
     
     i2c1_write( 0xA0 );
     
-    i2c1_write( 0x00 );
     i2c1_write( mem );
+    i2c1_write( ++mem );
     
-    i2c1_write( value>>8 );
-    i2c1_write( value );
+    i2c1_write( temp[0] );
+    i2c1_write( temp[1] );
     
     i2c1_stop();
-    */
 }
 
-char memory_read(I2CS_Handler_t *I2CS, char mem)
+char memory_read(char *temp, char *mem)
 {
-    I2CS->slaveAddr = 0x50;
-    I2CS->mode = I2CS_READ;
-    
-    I2CS->tx_buffer = mem+1;
-    I2CS->tx_buffer = mem;
-    
-    I2CS->tx_to_process = 2;
-    
-    /* restart */
-    
-    I2CS->mode I2CS_WRITE;
-    
-    char t[2];
-    t[0] = I2CS->rx_buffer;
-    t[1] = I2CS->rx_buffer;
-    
-    I2CS->rx_to_process = 2;
-    
-    return t;
-    /*
     i2c1_start();
     
     i2c1_write( 0xA0 );
@@ -296,27 +244,20 @@ char memory_read(I2CS_Handler_t *I2CS, char mem)
     int t = (int) (temp<<8)+temp1;
     
     return t;
-    */
 }
 
-void temp_init(I2CS_Handler_t *I2CS)
+void temp_init()
 {
-    I2CS->slaveAddr = 0x48;     // probe address
-    I2CS->mode = I2CS_READ;     // mode read
+    i2c1_start();
     
-    I2CS->tx_buffer = 0xEE;     // message to send, settings to start temperature sampling
-    I2CS->tx_to_process = 1;
+    i2c1_write( 0x90 );
+    i2c1_write( 0xEE );
+    
+    i2c1_stop();
 }
 
-int temp_read(I2CS_Handler_t *I2CS)
+char temp_read()
 {
-    
-    I2CS->slaveAddr = 0x48;     //  probe address
-    I2CS->mode = I2CS_READ;     // mode read
-    I2CS->tx_buffer = 0xAA;     // probe write 2 bytes for one temperature measurement
-    I2CS->tx_to_process = 1;
-    
-    /*
     i2c1_start();
     
 	i2c1_write( 0x90 );     //probe addres + R
@@ -326,26 +267,14 @@ int temp_read(I2CS_Handler_t *I2CS)
     
     i2c1_write( 0x91 );     //probe addres + W 
     
-	char temp = i2c1_read(0);
-	char temp1 = i2c1_read(1);
+    char temp[2];
+	char temp[0] = i2c1_read(0);
+	char temp[1] = i2c1_read(1);
     
 	i2c1_stop();
-    
-    int t = (int) (temp<<8)+temp1;
        
-    return t;
-    */
+    return temp;
 }
-
-/*
-void write_msg( unsigned char address, unsigned char msg )
-{
-    i2c_start();
-    i2c_write( address <<1 );
-    i2c_write( msg );
-    i2c_stop();
-}
-*/
 
 /******************************************************************************************/
 
