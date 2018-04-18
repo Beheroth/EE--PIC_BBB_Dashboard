@@ -9,7 +9,10 @@
 
 #include "I2CS.h"
 
+
 I2CS_Handler_t *hI2CS_2 = NULL;
+
+
 
 void I2CS_Init(I2CS_Handler_t *hI2CS)
 {
@@ -33,8 +36,12 @@ void I2CS_Init(I2CS_Handler_t *hI2CS)
     PIR3bits.SSP2IF = 0;
     // enable the master interrupt
     PIE3bits.SSP2IE = 1;    
+    
+    TRISDbits.RD0=1;    //Setting as input as given in datasheet
+    TRISDbits.RD1=1;    //Setting as input as given in datasheet
+    
     hI2CS_2 = hI2CS;
-    hI2CS->mode = 3;    
+    hI2CS->mode = 3;
 }
 
 
@@ -52,10 +59,9 @@ void I2CS_ISR()
             unsigned long reg = hI2CS_2->rx_buffer[0];
             switch(reg)
             {
-                case 0x0F:      //[todo] create a reference for all these instructions           
-                    //do something
-                    hI2CS_2->tx_buffer[0] = 0xAA;   //todo
-                    hI2CS_2->tx_buffer[1] = 0x55;   //todo
+                case 0x0F:       
+                    //temp_read(hI2CS_2);             //[TODO]fix include problems
+                    //memory_write();               //[todo]
                     //tx_buffer is filled, waiting for master to pull it
                     break;
             }

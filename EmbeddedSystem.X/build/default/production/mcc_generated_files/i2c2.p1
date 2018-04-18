@@ -1,105 +1,189 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"15832 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
-[s S748 :1 `uc 1 ]
-[n S748 . NOT_BOR ]
-"15835
-[s S749 :1 `uc 1 :1 `uc 1 ]
-[n S749 . . NOT_POR ]
-"15839
-[s S750 :2 `uc 1 :1 `uc 1 ]
-[n S750 . . NOT_PD ]
-"15843
-[s S751 :3 `uc 1 :1 `uc 1 ]
-[n S751 . . NOT_TO ]
-"15847
-[s S752 :4 `uc 1 :1 `uc 1 ]
-[n S752 . . NOT_RI ]
-"15851
-[s S753 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S753 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
-"15861
-[s S754 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S754 . BOR POR PD TO RI ]
-"15831
-[u S747 `S748 1 `S749 1 `S750 1 `S751 1 `S752 1 `S753 1 `S754 1 ]
-[n S747 . . . . . . . . ]
-"15869
-[v _RCONbits `VS747 ~T0 @X0 0 e@4048 ]
-"16930
-[s S821 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S821 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"16940
-[s S822 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S822 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"16950
-[s S823 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S823 . . GIEL GIEH ]
-"16929
-[u S820 `S821 1 `S822 1 `S823 1 ]
-[n S820 . . . . ]
-"16956
-[v _INTCONbits `VS820 ~T0 @X0 0 e@4082 ]
-"9649
-[s S442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S442 . CCP2IE TMR3IE HLVDIE BCL1IE EEIE C2IE C1IE OSCFIE ]
-"9659
-[s S443 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S443 . . LVDIE BCLIE ]
-"9664
-[s S444 :6 `uc 1 :1 `uc 1 ]
-[n S444 . . CMIE ]
-"9648
-[u S441 `S442 1 `S443 1 `S444 1 ]
-[n S441 . . . . ]
-"9669
-[v _PIE2bits `VS441 ~T0 @X0 0 e@4000 ]
-"9735
-[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S446 . CCP2IF TMR3IF HLVDIF BCL1IF EEIF C2IF C1IF OSCFIF ]
-"9745
-[s S447 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S447 . . LVDIF BCLIF ]
-"9750
-[s S448 :6 `uc 1 :1 `uc 1 ]
-[n S448 . . CMIF ]
-"9734
-[u S445 `S446 1 `S447 1 `S448 1 ]
-[n S445 . . . . ]
-"9755
-[v _PIR2bits `VS445 ~T0 @X0 0 e@4001 ]
-"686 mcc_generated_files/i2c1.h
-[v _I2C1_BusCollisionISR `(v ~T0 @X0 0 ef ]
-"9418 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
-[s S433 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S433 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE ]
-"9427
-[s S434 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S434 . . SSPIE TXIE RCIE ]
-"9417
-[u S432 `S433 1 `S434 1 ]
-[n S432 . . . ]
-"9434
-[v _PIE1bits `VS432 ~T0 @X0 0 e@3997 ]
-"9495
-[s S436 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S436 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
-"9504
-[s S437 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S437 . . SSPIF TXIF RCIF ]
-"9494
-[u S435 `S436 1 `S437 1 ]
-[n S435 . . . ]
-"9511
-[v _PIR1bits `VS435 ~T0 @X0 0 e@3998 ]
-"687 mcc_generated_files/i2c1.h
-[v _I2C1_ISR `(v ~T0 @X0 0 ef ]
-[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
-[; ;interrupt_manager.h: 122: void INTERRUPT_Initialize (void);
+"3796 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+[v _SSP2STAT `Vuc ~T0 @X0 0 e@3949 ]
+"3676
+[v _SSP2CON1 `Vuc ~T0 @X0 0 e@3948 ]
+"3531
+[v _SSP2CON2 `Vuc ~T0 @X0 0 e@3947 ]
+"3399
+[v _SSP2CON3 `Vuc ~T0 @X0 0 e@3945 ]
+"3461
+[v _SSP2MSK `Vuc ~T0 @X0 0 e@3946 ]
+"4196
+[v _SSP2ADD `Vuc ~T0 @X0 0 e@3950 ]
+"10017
+[s S458 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S458 . TMR1GIF TMR3GIF TMR5GIF CTMUIF TX2IF RC2IF BCL2IF SSP2IF ]
+"10027
+[s S459 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S459 . . RXBNIF . TXBNIF ]
+"10016
+[u S457 `S458 1 `S459 1 ]
+[n S457 . . . ]
+"10034
+[v _PIR3bits `VS457 ~T0 @X0 0 e@4004 ]
+"9907
+[s S454 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S454 . TMR1GIE TMR3GIE TMR5GIE CTMUIE TX2IE RC2IE BCL2IE SSP2IE ]
+"9917
+[s S455 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S455 . RXB0IE RXB1IE TXB0IE TXB1IE TXB2IE ]
+"9924
+[s S456 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S456 . . RXBNIE . TXBNIE ]
+"9906
+[u S453 `S454 1 `S455 1 `S456 1 ]
+[n S453 . . . . ]
+"9931
+[v _PIE3bits `VS453 ~T0 @X0 0 e@4003 ]
+"4266
+[v _SSP2BUF `Vuc ~T0 @X0 0 e@3951 ]
+"3802
+[s S174 :2 `uc 1 :1 `uc 1 ]
+[n S174 . . R_NOT_W ]
+"3806
+[s S175 :5 `uc 1 :1 `uc 1 ]
+[n S175 . . D_NOT_A ]
+"3810
+[s S176 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S176 . BF UA R_nW S P D_nA CKE SMP ]
+"3820
+[s S177 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S177 . . R . D ]
+"3826
+[s S178 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S178 . . W . A ]
+"3832
+[s S179 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S179 . . nW . nA ]
+"3838
+[s S180 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S180 . . R_W . D_A ]
+"3844
+[s S181 :2 `uc 1 :1 `uc 1 ]
+[n S181 . . NOT_WRITE ]
+"3848
+[s S182 :5 `uc 1 :1 `uc 1 ]
+[n S182 . . NOT_ADDRESS ]
+"3852
+[s S183 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S183 . . nWRITE . nADDRESS ]
+"3858
+[s S184 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S184 . BF2 UA2 I2C_READ2 I2C_START2 I2C_STOP2 DA2 CKE2 SMP2 ]
+"3868
+[s S185 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . . READ_WRITE2 S2 P2 DATA_ADDRESS2 ]
+"3875
+[s S186 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S186 . . RW2 START2 STOP2 D_A2 ]
+"3882
+[s S187 :5 `uc 1 :1 `uc 1 ]
+[n S187 . . D_NOT_A2 ]
+"3886
+[s S188 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S188 . . R_W2 . D_nA2 ]
+"3892
+[s S189 :2 `uc 1 :1 `uc 1 ]
+[n S189 . . R_NOT_W2 ]
+"3896
+[s S190 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S190 . . R_nW2 . I2C_DAT2 ]
+"3902
+[s S191 :2 `uc 1 :1 `uc 1 ]
+[n S191 . . NOT_W2 ]
+"3906
+[s S192 :5 `uc 1 :1 `uc 1 ]
+[n S192 . . NOT_A2 ]
+"3910
+[s S193 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S193 . . nW2 . nA2 ]
+"3916
+[s S194 :2 `uc 1 :1 `uc 1 ]
+[n S194 . . NOT_WRITE2 ]
+"3920
+[s S195 :5 `uc 1 :1 `uc 1 ]
+[n S195 . . NOT_ADDRESS2 ]
+"3924
+[s S196 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S196 . . nWRITE2 . nADDRESS2 ]
+"3801
+[u S173 `S174 1 `S175 1 `S176 1 `S177 1 `S178 1 `S179 1 `S180 1 `S181 1 `S182 1 `S183 1 `S184 1 `S185 1 `S186 1 `S187 1 `S188 1 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 ]
+[n S173 . . . . . . . . . . . . . . . . . . . . . . . . ]
+"3931
+[v _SSP2STATbits `VS173 ~T0 @X0 0 e@3949 ]
+"3537
+[s S166 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S166 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"3547
+[s S167 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S167 . SEN2 ADMSK12 ADMSK22 ADMSK32 ACKEN2 ACKDT2 ACKSTAT2 GCEN2 ]
+"3557
+[s S168 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S168 . . RSEN2 PEN2 RCEN2 ADMSK42 ADMSK52 ]
+"3536
+[u S165 `S166 1 `S167 1 `S168 1 ]
+[n S165 . . . . ]
+"3566
+[v _SSP2CON2bits `VS165 ~T0 @X0 0 e@3947 ]
+"119 mcc_generated_files/i2c2.c
+[c E6987 0 1 2 3 .. ]
+[n E6987 . I2C2_SLAVE_WRITE_REQUEST I2C2_SLAVE_READ_REQUEST I2C2_SLAVE_WRITE_COMPLETED I2C2_SLAVE_READ_COMPLETED  ]
+"67
+[v _I2C2_StatusCallback `(v ~T0 @X0 0 ef1`E6987 ]
+"3682 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+[s S170 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S170 . SSPM CKP SSPEN SSPOV WCOL ]
+"3689
+[s S171 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S171 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"3695
+[s S172 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S172 . SSPM02 SSPM12 SSPM22 SSPM32 CKP2 SSPEN2 SSPOV2 WCOL2 ]
+"3681
+[u S169 `S170 1 `S171 1 `S172 1 ]
+[n S169 . . . . ]
+"3706
+[v _SSP2CON1bits `VS169 ~T0 @X0 0 e@3948 ]
+"184 mcc_generated_files/i2c2.c
+[c E6998 0 1 .. ]
+[n E6998 . SLAVE_NORMAL_DATA SLAVE_DATA_ADDRESS  ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 50: extern volatile unsigned char ANSELA @ 0xF38;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
 [; ;pic18f46k22.h: 52: asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
 [; ;pic18f46k22.h: 55: typedef union {
@@ -6658,150 +6742,449 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 92: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 104: void PIN_MANAGER_IOC(void);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 83: typedef enum
-[; ;i2c1.h: 84: {
-[; ;i2c1.h: 85: I2C1_MESSAGE_COMPLETE,
-[; ;i2c1.h: 86: I2C1_MESSAGE_FAIL,
-[; ;i2c1.h: 87: I2C1_MESSAGE_PENDING,
-[; ;i2c1.h: 88: I2C1_STUCK_START,
-[; ;i2c1.h: 89: I2C1_MESSAGE_ADDRESS_NO_ACK,
-[; ;i2c1.h: 90: I2C1_DATA_NO_ACK,
-[; ;i2c1.h: 91: I2C1_LOST_STATE
-[; ;i2c1.h: 92: } I2C1_MESSAGE_STATUS;
-[; ;i2c1.h: 108: typedef struct
-[; ;i2c1.h: 109: {
-[; ;i2c1.h: 110: uint16_t address;
-[; ;i2c1.h: 113: uint8_t length;
-[; ;i2c1.h: 114: uint8_t *pbuffer;
-[; ;i2c1.h: 115: } I2C1_TRANSACTION_REQUEST_BLOCK;
-[; ;i2c1.h: 220: void I2C1_Initialize(void);
-[; ;i2c1.h: 259: void I2C1_MasterWrite(
-[; ;i2c1.h: 260: uint8_t *pdata,
-[; ;i2c1.h: 261: uint8_t length,
-[; ;i2c1.h: 262: uint16_t address,
-[; ;i2c1.h: 263: I2C1_MESSAGE_STATUS *pstatus);
-[; ;i2c1.h: 406: void I2C1_MasterRead(
-[; ;i2c1.h: 407: uint8_t *pdata,
-[; ;i2c1.h: 408: uint8_t length,
-[; ;i2c1.h: 409: uint16_t address,
-[; ;i2c1.h: 410: I2C1_MESSAGE_STATUS *pstatus);
-[; ;i2c1.h: 516: void I2C1_MasterTRBInsert(
-[; ;i2c1.h: 517: uint8_t count,
-[; ;i2c1.h: 518: I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
-[; ;i2c1.h: 519: I2C1_MESSAGE_STATUS *pflag);
-[; ;i2c1.h: 560: void I2C1_MasterReadTRBBuild(
-[; ;i2c1.h: 561: I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-[; ;i2c1.h: 562: uint8_t *pdata,
-[; ;i2c1.h: 563: uint8_t length,
-[; ;i2c1.h: 564: uint16_t address);
-[; ;i2c1.h: 605: void I2C1_MasterWriteTRBBuild(
-[; ;i2c1.h: 606: I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
-[; ;i2c1.h: 607: uint8_t *pdata,
-[; ;i2c1.h: 608: uint8_t length,
-[; ;i2c1.h: 609: uint16_t address);
-[; ;i2c1.h: 647: bool I2C1_MasterQueueIsEmpty(void);
-[; ;i2c1.h: 685: bool I2C1_MasterQueueIsFull(void);
-[; ;i2c1.h: 686: void I2C1_BusCollisionISR( void );
-[; ;i2c1.h: 687: void I2C1_ISR ( void );
-[; ;mcc.h: 69: void SYSTEM_Initialize(void);
-[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
-"51 mcc_generated_files/interrupt_manager.c
-[v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
-"52
+[; ;i2c2.h: 78: typedef enum
+[; ;i2c2.h: 79: {
+[; ;i2c2.h: 80: I2C2_SLAVE_WRITE_REQUEST,
+[; ;i2c2.h: 81: I2C2_SLAVE_READ_REQUEST,
+[; ;i2c2.h: 82: I2C2_SLAVE_WRITE_COMPLETED,
+[; ;i2c2.h: 83: I2C2_SLAVE_READ_COMPLETED,
+[; ;i2c2.h: 84: } I2C2_SLAVE_DRIVER_STATUS;
+[; ;i2c2.h: 113: void I2C2_Initialize(void);
+[; ;i2c2.h: 133: void I2C2_ISR ( void );
+[; ;i2c2.h: 140: extern volatile uint8_t I2C2_slaveWriteData;
+[; ;i2c2.c: 52: typedef enum
+[; ;i2c2.c: 53: {
+[; ;i2c2.c: 54: SLAVE_NORMAL_DATA,
+[; ;i2c2.c: 55: SLAVE_DATA_ADDRESS,
+[; ;i2c2.c: 56: } SLAVE_WRITE_DATA_TYPE;
+"62 mcc_generated_files/i2c2.c
+[v _I2C2_slaveWriteData `Vuc ~T0 @X0 1 e ]
+[i _I2C2_slaveWriteData
+-> -> 85 `i `uc
+]
+[; ;i2c2.c: 62: volatile uint8_t I2C2_slaveWriteData = 0x55;
+[; ;i2c2.c: 67: void I2C2_StatusCallback(I2C2_SLAVE_DRIVER_STATUS i2c_bus_state);
+"81
+[v _I2C2_Initialize `(v ~T0 @X0 1 ef ]
+"82
 {
-[; ;interrupt_manager.c: 51: void INTERRUPT_Initialize (void)
-[; ;interrupt_manager.c: 52: {
-[e :U _INTERRUPT_Initialize ]
+[; ;i2c2.c: 81: void I2C2_Initialize(void)
+[; ;i2c2.c: 82: {
+[e :U _I2C2_Initialize ]
 [f ]
-[; ;interrupt_manager.c: 54: RCONbits.IPEN = 0;
-"54
-[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
-[; ;interrupt_manager.c: 55: }
-"55
+[; ;i2c2.c: 85: SSP2STAT = 0x00;
+"85
+[e = _SSP2STAT -> -> 0 `i `uc ]
+[; ;i2c2.c: 87: SSP2CON1 = 0x26;
+"87
+[e = _SSP2CON1 -> -> 38 `i `uc ]
+[; ;i2c2.c: 89: SSP2CON2 = 0x00;
+"89
+[e = _SSP2CON2 -> -> 0 `i `uc ]
+[; ;i2c2.c: 91: SSP2CON3 = 0x00;
+"91
+[e = _SSP2CON3 -> -> 0 `i `uc ]
+[; ;i2c2.c: 93: SSP2MSK = (0x7F << 1);
+"93
+[e = _SSP2MSK -> << -> 127 `i -> 1 `i `uc ]
+[; ;i2c2.c: 95: SSP2ADD = (0x00 << 1);
+"95
+[e = _SSP2ADD -> << -> 0 `i -> 1 `i `uc ]
+[; ;i2c2.c: 98: PIR3bits.SSP2IF = 0;
+"98
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
+[; ;i2c2.c: 100: PIE3bits.SSP2IE = 1;
+"100
+[e = . . _PIE3bits 0 7 -> -> 1 `i `uc ]
+[; ;i2c2.c: 102: }
+"102
+[e :UE 849 ]
+}
+"104
+[v _I2C2_ISR `(v ~T0 @X0 1 ef ]
+"105
+{
+[; ;i2c2.c: 104: void I2C2_ISR ( void )
+[; ;i2c2.c: 105: {
+[e :U _I2C2_ISR ]
+[f ]
+"106
+[v _i2c_data `uc ~T0 @X0 1 a ]
+[; ;i2c2.c: 106: uint8_t i2c_data = 0x55;
+[e = _i2c_data -> -> 85 `i `uc ]
+[; ;i2c2.c: 112: PIR3bits.SSP2IF = 0;
+"112
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
+[; ;i2c2.c: 113: i2c_data = SSP2BUF;
+"113
+[e = _i2c_data _SSP2BUF ]
+[; ;i2c2.c: 114: if(1 == SSP2STATbits.R_nW)
+"114
+[e $ ! == -> 1 `i -> . . _SSP2STATbits 2 2 `i 851  ]
+[; ;i2c2.c: 115: {
+"115
+{
+[; ;i2c2.c: 116: if((1 == SSP2STATbits.D_nA) && (1 == SSP2CON2bits.ACKSTAT))
+"116
+[e $ ! && == -> 1 `i -> . . _SSP2STATbits 2 5 `i == -> 1 `i -> . . _SSP2CON2bits 0 6 `i 852  ]
+[; ;i2c2.c: 117: {
+"117
+{
+[; ;i2c2.c: 119: I2C2_StatusCallback(I2C2_SLAVE_READ_COMPLETED);
+"119
+[e ( _I2C2_StatusCallback (1 . `E6987 3 ]
+"120
+}
+[; ;i2c2.c: 120: }
+[e $U 853  ]
+"121
+[e :U 852 ]
+[; ;i2c2.c: 121: else
+[; ;i2c2.c: 122: {
+"122
+{
+[; ;i2c2.c: 124: I2C2_StatusCallback(I2C2_SLAVE_READ_REQUEST);
+"124
+[e ( _I2C2_StatusCallback (1 . `E6987 1 ]
+"125
+}
+[e :U 853 ]
+"126
+}
+[; ;i2c2.c: 125: }
+[; ;i2c2.c: 126: }
+[e $U 854  ]
+"127
+[e :U 851 ]
+[; ;i2c2.c: 127: else if(0 == SSP2STATbits.D_nA)
+[e $ ! == -> 0 `i -> . . _SSP2STATbits 2 5 `i 855  ]
+[; ;i2c2.c: 128: {
+"128
+{
+[; ;i2c2.c: 132: I2C2_StatusCallback(I2C2_SLAVE_WRITE_REQUEST);
+"132
+[e ( _I2C2_StatusCallback (1 . `E6987 0 ]
+"133
+}
+[; ;i2c2.c: 133: }
+[e $U 856  ]
+"134
+[e :U 855 ]
+[; ;i2c2.c: 134: else
+[; ;i2c2.c: 135: {
+"135
+{
+[; ;i2c2.c: 136: I2C2_slaveWriteData = i2c_data;
+"136
+[e = _I2C2_slaveWriteData _i2c_data ]
+[; ;i2c2.c: 139: I2C2_StatusCallback(I2C2_SLAVE_WRITE_COMPLETED);
+"139
+[e ( _I2C2_StatusCallback (1 . `E6987 2 ]
+"140
+}
+[e :U 856 ]
+[e :U 854 ]
+[; ;i2c2.c: 140: }
+[; ;i2c2.c: 142: SSP2CON1bits.CKP = 1;
+"142
+[e = . . _SSP2CON1bits 0 1 -> -> 1 `i `uc ]
+[; ;i2c2.c: 144: }
+"144
 [e :UE 850 ]
 }
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-[v F3 `(v ~T0 @X0 1 tf ]
-"57
-[v _INTERRUPT_InterruptManager `IF3 ~T0 @X0 1 e ]
-"58
+"168
+[v _I2C2_StatusCallback `(v ~T0 @X0 1 ef1`E6987 ]
+"169
 {
-[; ;interrupt_manager.c: 57: void interrupt INTERRUPT_InterruptManager (void)
-[; ;interrupt_manager.c: 58: {
-[e :U _INTERRUPT_InterruptManager ]
+[; ;i2c2.c: 168: void I2C2_StatusCallback(I2C2_SLAVE_DRIVER_STATUS i2c_bus_state)
+[; ;i2c2.c: 169: {
+[e :U _I2C2_StatusCallback ]
+"168
+[v _i2c_bus_state `E6987 ~T0 @X0 1 r1 ]
+"169
 [f ]
-[; ;interrupt_manager.c: 60: if(INTCONbits.PEIE == 1 && PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
-"60
-[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE2bits 0 3 `i -> 1 `i == -> . . _PIR2bits 0 3 `i -> 1 `i 852  ]
-[; ;interrupt_manager.c: 61: {
-"61
+"171
+[v F7008 `uc ~T0 @X0 -> 0 `x s EEPROM_Buffer ]
+[i F7008
+:U ..
+"173
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 4 `i `uc
+-> -> 5 `i `uc
+-> -> 6 `i `uc
+-> -> 7 `i `uc
+-> -> 8 `i `uc
+-> -> 9 `i `uc
+-> -> 10 `i `uc
+-> -> 11 `i `uc
+-> -> 12 `i `uc
+-> -> 13 `i `uc
+-> -> 14 `i `uc
+-> -> 15 `i `uc
+"174
+-> -> 16 `i `uc
+-> -> 17 `i `uc
+-> -> 18 `i `uc
+-> -> 19 `i `uc
+-> -> 20 `i `uc
+-> -> 21 `i `uc
+-> -> 22 `i `uc
+-> -> 23 `i `uc
+-> -> 24 `i `uc
+-> -> 25 `i `uc
+-> -> 26 `i `uc
+-> -> 27 `i `uc
+-> -> 28 `i `uc
+-> -> 29 `i `uc
+-> -> 30 `i `uc
+-> -> 31 `i `uc
+"175
+-> -> 32 `i `uc
+-> -> 33 `i `uc
+-> -> 34 `i `uc
+-> -> 35 `i `uc
+-> -> 36 `i `uc
+-> -> 37 `i `uc
+-> -> 38 `i `uc
+-> -> 39 `i `uc
+-> -> 40 `i `uc
+-> -> 41 `i `uc
+-> -> 42 `i `uc
+-> -> 43 `i `uc
+-> -> 44 `i `uc
+-> -> 45 `i `uc
+-> -> 46 `i `uc
+-> -> 47 `i `uc
+"176
+-> -> 48 `i `uc
+-> -> 49 `i `uc
+-> -> 50 `i `uc
+-> -> 51 `i `uc
+-> -> 52 `i `uc
+-> -> 53 `i `uc
+-> -> 54 `i `uc
+-> -> 55 `i `uc
+-> -> 56 `i `uc
+-> -> 57 `i `uc
+-> -> 58 `i `uc
+-> -> 59 `i `uc
+-> -> 60 `i `uc
+-> -> 61 `i `uc
+-> -> 62 `i `uc
+-> -> 63 `i `uc
+"177
+-> -> 64 `i `uc
+-> -> 65 `i `uc
+-> -> 66 `i `uc
+-> -> 67 `i `uc
+-> -> 68 `i `uc
+-> -> 69 `i `uc
+-> -> 70 `i `uc
+-> -> 71 `i `uc
+-> -> 72 `i `uc
+-> -> 73 `i `uc
+-> -> 74 `i `uc
+-> -> 75 `i `uc
+-> -> 76 `i `uc
+-> -> 77 `i `uc
+-> -> 78 `i `uc
+-> -> 79 `i `uc
+"178
+-> -> 80 `i `uc
+-> -> 81 `i `uc
+-> -> 82 `i `uc
+-> -> 83 `i `uc
+-> -> 84 `i `uc
+-> -> 85 `i `uc
+-> -> 86 `i `uc
+-> -> 87 `i `uc
+-> -> 88 `i `uc
+-> -> 89 `i `uc
+-> -> 90 `i `uc
+-> -> 91 `i `uc
+-> -> 92 `i `uc
+-> -> 93 `i `uc
+-> -> 94 `i `uc
+-> -> 95 `i `uc
+"179
+-> -> 96 `i `uc
+-> -> 97 `i `uc
+-> -> 98 `i `uc
+-> -> 99 `i `uc
+-> -> 100 `i `uc
+-> -> 101 `i `uc
+-> -> 102 `i `uc
+-> -> 103 `i `uc
+-> -> 104 `i `uc
+-> -> 105 `i `uc
+-> -> 106 `i `uc
+-> -> 107 `i `uc
+-> -> 108 `i `uc
+-> -> 109 `i `uc
+-> -> 110 `i `uc
+-> -> 111 `i `uc
+"180
+-> -> 112 `i `uc
+-> -> 113 `i `uc
+-> -> 114 `i `uc
+-> -> 115 `i `uc
+-> -> 116 `i `uc
+-> -> 117 `i `uc
+-> -> 118 `i `uc
+-> -> 119 `i `uc
+-> -> 120 `i `uc
+-> -> 121 `i `uc
+-> -> 122 `i `uc
+-> -> 123 `i `uc
+-> -> 124 `i `uc
+-> -> 125 `i `uc
+-> -> 126 `i `uc
+-> -> 127 `i `uc
+..
+]
+"183
+[v F7009 `uc ~T0 @X0 1 s eepromAddress ]
+[i F7009
+-> -> 0 `i `uc
+]
+"184
+[v F7010 `uc ~T0 @X0 1 s slaveWriteType ]
+[i F7010
+-> . `E6998 0 `uc
+]
+[; ;i2c2.c: 171: static uint8_t EEPROM_Buffer[] =
+[; ;i2c2.c: 172: {
+[; ;i2c2.c: 173: 0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,
+[; ;i2c2.c: 174: 0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1a,0x1b,0x1c,0x1d,0x1e,0x1f,
+[; ;i2c2.c: 175: 0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x28,0x29,0x2a,0x2b,0x2c,0x2d,0x2e,0x2f,
+[; ;i2c2.c: 176: 0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x3a,0x3b,0x3c,0x3d,0x3e,0x3f,
+[; ;i2c2.c: 177: 0x40,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4a,0x4b,0x4c,0x4d,0x4e,0x4f,
+[; ;i2c2.c: 178: 0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5a,0x5b,0x5c,0x5d,0x5e,0x5f,
+[; ;i2c2.c: 179: 0x60,0x61,0x62,0x63,0x64,0x65,0x66,0x67,0x68,0x69,0x6a,0x6b,0x6c,0x6d,0x6e,0x6f,
+[; ;i2c2.c: 180: 0x70,0x71,0x72,0x73,0x74,0x75,0x76,0x77,0x78,0x79,0x7a,0x7b,0x7c,0x7d,0x7e,0x7f,
+[; ;i2c2.c: 181: };
+[; ;i2c2.c: 183: static uint8_t eepromAddress = 0;
+[; ;i2c2.c: 184: static uint8_t slaveWriteType = SLAVE_NORMAL_DATA;
+[; ;i2c2.c: 187: switch (i2c_bus_state)
+"187
+[e $U 859  ]
+[; ;i2c2.c: 188: {
+"188
 {
-[; ;interrupt_manager.c: 62: I2C1_BusCollisionISR();
-"62
-[e ( _I2C1_BusCollisionISR ..  ]
-"63
-}
-[; ;interrupt_manager.c: 63: }
-[e $U 853  ]
-"64
-[e :U 852 ]
-[; ;interrupt_manager.c: 64: else if(INTCONbits.PEIE == 1 && PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
-[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE1bits 0 3 `i -> 1 `i == -> . . _PIR1bits 0 3 `i -> 1 `i 854  ]
-[; ;interrupt_manager.c: 65: {
-"65
+[; ;i2c2.c: 189: case I2C2_SLAVE_WRITE_REQUEST:
+"189
+[e :U 860 ]
+[; ;i2c2.c: 191: slaveWriteType = SLAVE_DATA_ADDRESS;
+"191
+[e = F7010 -> . `E6998 1 `uc ]
+[; ;i2c2.c: 192: break;
+"192
+[e $U 858  ]
+[; ;i2c2.c: 195: case I2C2_SLAVE_WRITE_COMPLETED:
+"195
+[e :U 861 ]
+[; ;i2c2.c: 197: switch(slaveWriteType)
+"197
+[e $U 863  ]
+[; ;i2c2.c: 198: {
+"198
 {
-[; ;interrupt_manager.c: 66: I2C1_ISR();
-"66
-[e ( _I2C1_ISR ..  ]
-"67
-}
-[; ;interrupt_manager.c: 67: }
-[e $U 855  ]
-"68
-[e :U 854 ]
-[; ;interrupt_manager.c: 68: else
-[; ;interrupt_manager.c: 69: {
-"69
+[; ;i2c2.c: 199: case SLAVE_DATA_ADDRESS:
+"199
+[e :U 864 ]
+[; ;i2c2.c: 200: eepromAddress = I2C2_slaveWriteData;
+"200
+[e = F7009 _I2C2_slaveWriteData ]
+[; ;i2c2.c: 201: break;
+"201
+[e $U 862  ]
+[; ;i2c2.c: 204: case SLAVE_NORMAL_DATA:
+"204
+[e :U 865 ]
+[; ;i2c2.c: 205: default:
+"205
+[e :U 866 ]
+[; ;i2c2.c: 207: EEPROM_Buffer[eepromAddress++] = I2C2_slaveWriteData;
+"207
+[e = *U + &U F7008 * -> ++ F7009 -> -> 1 `i `uc `ux -> -> # *U &U F7008 `ui `ux _I2C2_slaveWriteData ]
+[; ;i2c2.c: 208: if(sizeof(EEPROM_Buffer) <= eepromAddress)
+"208
+[e $ ! <= -> # F7008 `ui -> F7009 `ui 867  ]
+[; ;i2c2.c: 209: {
+"209
 {
-"71
+[; ;i2c2.c: 210: eepromAddress = 0;
+"210
+[e = F7009 -> -> 0 `i `uc ]
+"211
 }
-[e :U 855 ]
-[e :U 853 ]
-[; ;interrupt_manager.c: 71: }
-[; ;interrupt_manager.c: 72: }
-"72
-[e :UE 851 ]
+[e :U 867 ]
+[; ;i2c2.c: 211: }
+[; ;i2c2.c: 212: break;
+"212
+[e $U 862  ]
+"214
+}
+[; ;i2c2.c: 214: }
+[e $U 862  ]
+"197
+[e :U 863 ]
+[e [\ F7010 , $ -> . `E6998 1 `uc 864
+ , $ -> . `E6998 0 `uc 865
+ 866 ]
+"214
+[e :U 862 ]
+[; ;i2c2.c: 216: slaveWriteType = SLAVE_NORMAL_DATA;
+"216
+[e = F7010 -> . `E6998 0 `uc ]
+[; ;i2c2.c: 217: break;
+"217
+[e $U 858  ]
+[; ;i2c2.c: 219: case I2C2_SLAVE_READ_REQUEST:
+"219
+[e :U 868 ]
+[; ;i2c2.c: 220: SSP2BUF = EEPROM_Buffer[eepromAddress++];
+"220
+[e = _SSP2BUF *U + &U F7008 * -> ++ F7009 -> -> 1 `i `uc `ux -> -> # *U &U F7008 `ui `ux ]
+[; ;i2c2.c: 221: if(sizeof(EEPROM_Buffer) <= eepromAddress)
+"221
+[e $ ! <= -> # F7008 `ui -> F7009 `ui 869  ]
+[; ;i2c2.c: 222: {
+"222
+{
+[; ;i2c2.c: 223: eepromAddress = 0;
+"223
+[e = F7009 -> -> 0 `i `uc ]
+"224
+}
+[e :U 869 ]
+[; ;i2c2.c: 224: }
+[; ;i2c2.c: 225: break;
+"225
+[e $U 858  ]
+[; ;i2c2.c: 227: case I2C2_SLAVE_READ_COMPLETED:
+"227
+[e :U 870 ]
+[; ;i2c2.c: 228: default:;
+"228
+[e :U 871 ]
+"230
+}
+[; ;i2c2.c: 230: }
+[e $U 858  ]
+"187
+[e :U 859 ]
+[e [\ _i2c_bus_state , $ . `E6987 0 860
+ , $ . `E6987 2 861
+ , $ . `E6987 1 868
+ , $ . `E6987 3 870
+ 871 ]
+"230
+[e :U 858 ]
+[; ;i2c2.c: 232: }
+"232
+[e :UE 857 ]
 }

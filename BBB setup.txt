@@ -1,0 +1,17 @@
+Dans la racine de la BBB entrer les commandes bash suivantes
+
+pip install paho-mqtt
+sudo apt-get install build-essential python-pip python-dev python-smbus git
+git clone https://github.com/adafruit/Adafruit_Python_GPIO.git
+cd Adafruit_Python_GPIO
+sudo python setup.py install
+
+Connecter les Vcc et Gnd du PIC et de la BBB
+Connecter SDA pin 20 et SCL pin 19
+Utiliser la commande bash suivante pour connaître l'adresse du PIC sur le bus
+i2cdetect -y -r 2
+
+Créer le dossier MQTT et placer le code BBB_I2C+Broker.py
+
+Lancer le programme avec la commande bash
+python BBB_I2C+Broker.py
