@@ -8675,84 +8675,7 @@ void SYSTEM_Initialize(void);
 # 83
 void OSCILLATOR_Initialize(void);
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 22 "mcc_generated_files/../I2CS.h"
-typedef struct{
-unsigned long tx_buffer[10];
-unsigned long rx_buffer[10];
-unsigned long mode;
-unsigned char tx_to_process;
-unsigned char rx_to_process;
-unsigned char tx_cursor;
-unsigned char rx_cursor;
-unsigned char slaveAddr;
-}I2CS_Handler_t;
-
-void I2CS_Init(I2CS_Handler_t *hI2C);
-void I2CS_WriteByte(I2CS_Handler_t *hI2C, unsigned char slaveAddr, unsigned char reg, unsigned char data) ;
-void I2CS_ReadByte(I2CS_Handler_t *hI2C, unsigned char slaveAddr, unsigned char reg);
-void I2CS_Start(I2CS_Handler_t *hI2C);
-
-# 52 "mcc_generated_files/interrupt_manager.c"
+# 51 "mcc_generated_files/interrupt_manager.c"
 void INTERRUPT_Initialize (void)
 {
 
@@ -8764,23 +8687,7 @@ void interrupt INTERRUPT_InterruptManager (void)
 
 if(INTCONbits.PEIE == 1 && PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
 {
-I2CS_Handler_t *i2c2;
-if (i2c2->rx_buffer)
-{
-char mem = 0x00;
-
-
-char temp = temp_read();
-memory_write(mem, temp);
-
-i2c2->tx_buffer = temp ;
-i2c2->rx_to_process = 2 ;
-}
-else
-{
-
-}
-
+I2CS_ISR();
 }
 else if(INTCONbits.PEIE == 1 && PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
 {
@@ -8788,7 +8695,7 @@ I2C1_BusCollisionISR();
 }
 else if(INTCONbits.PEIE == 1 && PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
 {
-I2C1_ISR();
+
 }
 
 else

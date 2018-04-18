@@ -4,10 +4,10 @@
 
 #include "I2CS.h"
 
-void memory_write (I2CS_Handler_t *hI2CS, char mem, char t1, char t2);
-char memory_read(I2CS_Handler_t *hI2CS, char mem);
-void temp_init(I2CS_Handler_t *hI2CS);
-void temp_read(I2CS_Handler_t *hI2CS);
+void memory_write (char mem, char *temp);
+char memory_read(char *mem);
+void temp_init();
+char *temp_read();
 void i2c1_init(void);
 void i2c2_Initialize(void);
 void i2c1_waitForIdle(void);

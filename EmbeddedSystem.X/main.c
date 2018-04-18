@@ -140,7 +140,7 @@ void i2c1_stop(void)
 }
 
 /******************************************************************************************/
-/*
+
 int i2c1_read( unsigned char ack )
 {
     unsigned char i2cReadData;
@@ -167,9 +167,9 @@ int i2c1_read( unsigned char ack )
 
     return( i2cReadData );
 }
-*/
+
 /******************************************************************************************/
-/*
+
 unsigned char i2c1_write( unsigned char i2cWriteData )
 {
     i2c1_waitForIdle();
@@ -177,7 +177,7 @@ unsigned char i2c1_write( unsigned char i2cWriteData )
 
     return ( ! SSP1CON2bits.ACKSTAT  ); // function returns '1' if transmission is acknowledged
 }
-*/
+
 /******************************************************************************************/
 
 void memory_write (char mem, char *temp)
@@ -194,8 +194,8 @@ void memory_write (char mem, char *temp)
     
     i2c1_stop();
 }
-
-char memory_read(char *temp, char *mem)
+/*
+char *memory_read(char *mem)
 {
     i2c1_start();
     
@@ -206,18 +206,17 @@ char memory_read(char *temp, char *mem)
     
     i2c1_repStart();
     
-    i2c1_start( 0xA1 );
+    i2c1_write( 0xA1 );
     
-    unsigned char temp = i2c1_read(0);
-    unsigned char temp1 = i2c1_read(1);
+    char temp[2];
+    char temp[0] = i2c1_read(0);
+    char temp[1] = i2c1_read(1);
     
     i2c1_stop();
     
-    int t = (int) (temp<<8)+temp1;
-    
-    return t;
+    return temp;
 }
-
+*/
 void temp_init(void)
 {
     i2c1_start();
@@ -240,9 +239,10 @@ char *temp_read()
     
     i2c1_write( 0x91 );     //probe addres + W 
     
-    char temp[2];
-	char temp[0] = i2c1_read(0);
-	char temp[1] = i2c1_read(1);
+    char t1 = (char)i2c1_read(0);
+    char t2 = (char)i2c1_read(1);
+    
+    char temp[2] = {t1,t2};
     
 	i2c1_stop();
        

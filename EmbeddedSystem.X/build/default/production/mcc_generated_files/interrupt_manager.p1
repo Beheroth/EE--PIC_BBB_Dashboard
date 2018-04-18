@@ -1,30 +1,44 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"22 I2CS.h
-[s S850 `ul -> 10 `i `ul -> 10 `i `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S850 . tx_buffer rx_buffer mode tx_to_process rx_to_process tx_cursor rx_cursor slaveAddr ]
-"3796 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
-[v _SSP2STAT `Vuc ~T0 @X0 0 e@3949 ]
-"3676
-[v _SSP2CON1 `Vuc ~T0 @X0 0 e@3948 ]
-"3531
-[v _SSP2CON2 `Vuc ~T0 @X0 0 e@3947 ]
-"3399
-[v _SSP2CON3 `Vuc ~T0 @X0 0 e@3945 ]
-"3461
-[v _SSP2MSK `Vuc ~T0 @X0 0 e@3946 ]
-"4196
-[v _SSP2ADD `Vuc ~T0 @X0 0 e@3950 ]
-"10017
-[s S458 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S458 . TMR1GIF TMR3GIF TMR5GIF CTMUIF TX2IF RC2IF BCL2IF SSP2IF ]
-"10027
-[s S459 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S459 . . RXBNIF . TXBNIF ]
-"10016
-[u S457 `S458 1 `S459 1 ]
-[n S457 . . . ]
-"10034
-[v _PIR3bits `VS457 ~T0 @X0 0 e@4004 ]
+"15832 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
+[s S748 :1 `uc 1 ]
+[n S748 . NOT_BOR ]
+"15835
+[s S749 :1 `uc 1 :1 `uc 1 ]
+[n S749 . . NOT_POR ]
+"15839
+[s S750 :2 `uc 1 :1 `uc 1 ]
+[n S750 . . NOT_PD ]
+"15843
+[s S751 :3 `uc 1 :1 `uc 1 ]
+[n S751 . . NOT_TO ]
+"15847
+[s S752 :4 `uc 1 :1 `uc 1 ]
+[n S752 . . NOT_RI ]
+"15851
+[s S753 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S753 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"15861
+[s S754 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S754 . BOR POR PD TO RI ]
+"15831
+[u S747 `S748 1 `S749 1 `S750 1 `S751 1 `S752 1 `S753 1 `S754 1 ]
+[n S747 . . . . . . . . ]
+"15869
+[v _RCONbits `VS747 ~T0 @X0 0 e@4048 ]
+"16930
+[s S821 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S821 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"16940
+[s S822 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S822 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16950
+[s S823 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S823 . . GIEL GIEH ]
+"16929
+[u S820 `S821 1 `S822 1 `S823 1 ]
+[n S820 . . . . ]
+"16956
+[v _INTCONbits `VS820 ~T0 @X0 0 e@4082 ]
 "9907
 [s S454 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S454 . TMR1GIE TMR3GIE TMR5GIE CTMUIE TX2IE RC2IE BCL2IE SSP2IE ]
@@ -39,23 +53,76 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S453 . . . . ]
 "9931
 [v _PIE3bits `VS453 ~T0 @X0 0 e@4003 ]
-"8735
-[s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S408 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"8745
-[s S409 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S409 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"8734
-[u S407 `S408 1 `S409 1 ]
-[n S407 . . . ]
-"8756
-[v _TRISDbits `VS407 ~T0 @X0 0 e@3989 ]
-"4266
-[v _SSP2BUF `Vuc ~T0 @X0 0 e@3951 ]
-"66 I2CS.c
-[v _temp_read `(i ~T0 @X0 0 ef ]
-"67
-[v _memory_write `(i ~T0 @X0 0 ef ]
+"10017
+[s S458 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S458 . TMR1GIF TMR3GIF TMR5GIF CTMUIF TX2IF RC2IF BCL2IF SSP2IF ]
+"10027
+[s S459 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S459 . . RXBNIF . TXBNIF ]
+"10016
+[u S457 `S458 1 `S459 1 ]
+[n S457 . . . ]
+"10034
+[v _PIR3bits `VS457 ~T0 @X0 0 e@4004 ]
+"62 mcc_generated_files/interrupt_manager.c
+[v _I2CS_ISR `(i ~T0 @X0 0 ef ]
+"9649 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
+[s S442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S442 . CCP2IE TMR3IE HLVDIE BCL1IE EEIE C2IE C1IE OSCFIE ]
+"9659
+[s S443 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S443 . . LVDIE BCLIE ]
+"9664
+[s S444 :6 `uc 1 :1 `uc 1 ]
+[n S444 . . CMIE ]
+"9648
+[u S441 `S442 1 `S443 1 `S444 1 ]
+[n S441 . . . . ]
+"9669
+[v _PIE2bits `VS441 ~T0 @X0 0 e@4000 ]
+"9735
+[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S446 . CCP2IF TMR3IF HLVDIF BCL1IF EEIF C2IF C1IF OSCFIF ]
+"9745
+[s S447 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S447 . . LVDIF BCLIF ]
+"9750
+[s S448 :6 `uc 1 :1 `uc 1 ]
+[n S448 . . CMIF ]
+"9734
+[u S445 `S446 1 `S447 1 `S448 1 ]
+[n S445 . . . . ]
+"9755
+[v _PIR2bits `VS445 ~T0 @X0 0 e@4001 ]
+"686 mcc_generated_files/i2c1.h
+[v _I2C1_BusCollisionISR `(v ~T0 @X0 0 ef ]
+"9418 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
+[s S433 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S433 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE ]
+"9427
+[s S434 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S434 . . SSPIE TXIE RCIE ]
+"9417
+[u S432 `S433 1 `S434 1 ]
+[n S432 . . . ]
+"9434
+[v _PIE1bits `VS432 ~T0 @X0 0 e@3997 ]
+"9495
+[s S436 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S436 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
+"9504
+[s S437 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S437 . . SSPIF TXIF RCIF ]
+"9494
+[u S435 `S436 1 `S437 1 ]
+[n S435 . . . ]
+"9511
+[v _PIR1bits `VS435 ~T0 @X0 0 e@3998 ]
+[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
+[; ;interrupt_manager.h: 122: void INTERRUPT_Initialize (void);
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 50: extern volatile unsigned char ANSELA @ 0xF38;
 "52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
 [; ;pic18f46k22.h: 52: asm("ANSELA equ 0F38h");
@@ -6605,294 +6672,183 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18f46k22.h: 19670: extern volatile __bit nTO @ (((unsigned) &RCON)*8) + 3;
 [; ;pic18f46k22.h: 19672: extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 [; ;pic18f46k22.h: 19674: extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
+[; ;pic18.h: 18: __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
+[; ;pic18.h: 19: __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+[; ;pic18.h: 43: extern void __nop(void);
+[; ;pic18.h: 135: __attribute__((__unsupported__("The " "Read_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) unsigned char Read_b_eep(unsigned int badd);
+[; ;pic18.h: 136: __attribute__((__unsupported__("The " "Busy_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Busy_eep(void);
+[; ;pic18.h: 137: __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
+[; ;pic18.h: 155: unsigned char __t1rd16on(void);
+[; ;pic18.h: 156: unsigned char __t3rd16on(void);
+[; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
+[; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
+[; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
+[; ;pin_manager.h: 112: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 124: void PIN_MANAGER_IOC(void);
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;I2CS.h: 22: typedef struct{
-[; ;I2CS.h: 23: unsigned long tx_buffer[10];
-[; ;I2CS.h: 24: unsigned long rx_buffer[10];
-[; ;I2CS.h: 25: unsigned long mode;
-[; ;I2CS.h: 26: unsigned char tx_to_process;
-[; ;I2CS.h: 27: unsigned char rx_to_process;
-[; ;I2CS.h: 28: unsigned char tx_cursor;
-[; ;I2CS.h: 29: unsigned char rx_cursor;
-[; ;I2CS.h: 30: unsigned char slaveAddr;
-[; ;I2CS.h: 31: }I2CS_Handler_t;
-[; ;I2CS.h: 33: void I2CS_Init(I2CS_Handler_t *hI2C);
-[; ;I2CS.h: 34: void I2CS_WriteByte(I2CS_Handler_t *hI2C, unsigned char slaveAddr, unsigned char reg, unsigned char data) ;
-[; ;I2CS.h: 35: void I2CS_ReadByte(I2CS_Handler_t *hI2C, unsigned char slaveAddr, unsigned char reg);
-[; ;I2CS.h: 36: void I2CS_Start(I2CS_Handler_t *hI2C);
-"13 I2CS.c
-[v _hI2CS_2 `*S850 ~T0 @X0 1 e ]
-[i _hI2CS_2
--> -> 0 `i `*S850
-]
-[; ;I2CS.c: 13: I2CS_Handler_t *hI2CS_2 = (0);
-"17
-[v _I2CS_Init `(v ~T0 @X0 1 ef1`*S850 ]
-"18
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;i2c1.h: 83: typedef enum
+[; ;i2c1.h: 84: {
+[; ;i2c1.h: 85: I2C1_MESSAGE_COMPLETE,
+[; ;i2c1.h: 86: I2C1_MESSAGE_FAIL,
+[; ;i2c1.h: 87: I2C1_MESSAGE_PENDING,
+[; ;i2c1.h: 88: I2C1_STUCK_START,
+[; ;i2c1.h: 89: I2C1_MESSAGE_ADDRESS_NO_ACK,
+[; ;i2c1.h: 90: I2C1_DATA_NO_ACK,
+[; ;i2c1.h: 91: I2C1_LOST_STATE
+[; ;i2c1.h: 92: } I2C1_MESSAGE_STATUS;
+[; ;i2c1.h: 108: typedef struct
+[; ;i2c1.h: 109: {
+[; ;i2c1.h: 110: uint16_t address;
+[; ;i2c1.h: 113: uint8_t length;
+[; ;i2c1.h: 114: uint8_t *pbuffer;
+[; ;i2c1.h: 115: } I2C1_TRANSACTION_REQUEST_BLOCK;
+[; ;i2c1.h: 220: void I2C1_Initialize(void);
+[; ;i2c1.h: 259: void I2C1_MasterWrite(
+[; ;i2c1.h: 260: uint8_t *pdata,
+[; ;i2c1.h: 261: uint8_t length,
+[; ;i2c1.h: 262: uint16_t address,
+[; ;i2c1.h: 263: I2C1_MESSAGE_STATUS *pstatus);
+[; ;i2c1.h: 406: void I2C1_MasterRead(
+[; ;i2c1.h: 407: uint8_t *pdata,
+[; ;i2c1.h: 408: uint8_t length,
+[; ;i2c1.h: 409: uint16_t address,
+[; ;i2c1.h: 410: I2C1_MESSAGE_STATUS *pstatus);
+[; ;i2c1.h: 516: void I2C1_MasterTRBInsert(
+[; ;i2c1.h: 517: uint8_t count,
+[; ;i2c1.h: 518: I2C1_TRANSACTION_REQUEST_BLOCK *ptrb_list,
+[; ;i2c1.h: 519: I2C1_MESSAGE_STATUS *pflag);
+[; ;i2c1.h: 560: void I2C1_MasterReadTRBBuild(
+[; ;i2c1.h: 561: I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+[; ;i2c1.h: 562: uint8_t *pdata,
+[; ;i2c1.h: 563: uint8_t length,
+[; ;i2c1.h: 564: uint16_t address);
+[; ;i2c1.h: 605: void I2C1_MasterWriteTRBBuild(
+[; ;i2c1.h: 606: I2C1_TRANSACTION_REQUEST_BLOCK *ptrb,
+[; ;i2c1.h: 607: uint8_t *pdata,
+[; ;i2c1.h: 608: uint8_t length,
+[; ;i2c1.h: 609: uint16_t address);
+[; ;i2c1.h: 647: bool I2C1_MasterQueueIsEmpty(void);
+[; ;i2c1.h: 685: bool I2C1_MasterQueueIsFull(void);
+[; ;i2c1.h: 686: void I2C1_BusCollisionISR( void );
+[; ;i2c1.h: 687: void I2C1_ISR ( void );
+[; ;i2c2.h: 78: typedef enum
+[; ;i2c2.h: 79: {
+[; ;i2c2.h: 80: I2C2_SLAVE_WRITE_REQUEST,
+[; ;i2c2.h: 81: I2C2_SLAVE_READ_REQUEST,
+[; ;i2c2.h: 82: I2C2_SLAVE_WRITE_COMPLETED,
+[; ;i2c2.h: 83: I2C2_SLAVE_READ_COMPLETED,
+[; ;i2c2.h: 84: } I2C2_SLAVE_DRIVER_STATUS;
+[; ;i2c2.h: 113: void I2C2_Initialize(void);
+[; ;i2c2.h: 133: void I2C2_ISR ( void );
+[; ;i2c2.h: 140: extern volatile uint8_t I2C2_slaveWriteData;
+[; ;mcc.h: 70: void SYSTEM_Initialize(void);
+[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
+"51 mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
+"52
 {
-[; ;I2CS.c: 17: void I2CS_Init(I2CS_Handler_t *hI2CS)
-[; ;I2CS.c: 18: {
-[e :U _I2CS_Init ]
-"17
-[v _hI2CS `*S850 ~T0 @X0 1 r1 ]
-"18
+[; ;interrupt_manager.c: 51: void INTERRUPT_Initialize (void)
+[; ;interrupt_manager.c: 52: {
+[e :U _INTERRUPT_Initialize ]
 [f ]
-[; ;I2CS.c: 23: SSP2STAT = 0x00;
-"23
-[e = _SSP2STAT -> -> 0 `i `uc ]
-[; ;I2CS.c: 25: SSP2CON1 = 0x26;
-"25
-[e = _SSP2CON1 -> -> 38 `i `uc ]
-[; ;I2CS.c: 27: SSP2CON2 = 0x00;
-"27
-[e = _SSP2CON2 -> -> 0 `i `uc ]
-[; ;I2CS.c: 29: SSP2CON3 = 0x00;
-"29
-[e = _SSP2CON3 -> -> 0 `i `uc ]
-[; ;I2CS.c: 31: SSP2MSK = (0x7F << 1);
-"31
-[e = _SSP2MSK -> << -> 127 `i -> 1 `i `uc ]
-[; ;I2CS.c: 33: SSP2ADD = (0x00 << 1);
-"33
-[e = _SSP2ADD -> << -> 0 `i -> 1 `i `uc ]
-[; ;I2CS.c: 36: PIR3bits.SSP2IF = 0;
-"36
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;I2CS.c: 38: PIE3bits.SSP2IE = 1;
-"38
-[e = . . _PIE3bits 0 7 -> -> 1 `i `uc ]
-[; ;I2CS.c: 40: TRISDbits.RD0=1;
-"40
-[e = . . _TRISDbits 1 0 -> -> 1 `i `uc ]
-[; ;I2CS.c: 41: TRISDbits.RD1=1;
-"41
-[e = . . _TRISDbits 1 1 -> -> 1 `i `uc ]
-[; ;I2CS.c: 43: hI2CS_2 = hI2CS;
-"43
-[e = _hI2CS_2 _hI2CS ]
-[; ;I2CS.c: 44: hI2CS->mode = 3;
-"44
-[e = . *U _hI2CS 2 -> -> -> 3 `i `l `ul ]
-[; ;I2CS.c: 45: }
-"45
-[e :UE 851 ]
-}
-"48
-[v _I2CS_ISR `(v ~T0 @X0 1 ef ]
-"49
-{
-[; ;I2CS.c: 48: void I2CS_ISR()
-[; ;I2CS.c: 49: {
-[e :U _I2CS_ISR ]
-[f ]
-[; ;I2CS.c: 50: PIR3bits.SSP2IF = 0;
-"50
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;I2CS.c: 51: if(hI2CS_2->mode == 0 & hI2CS_2->rx_to_process)
-"51
-[e $ ! != & -> == . *U _hI2CS_2 2 -> -> -> 0 `i `l `ul `i -> . *U _hI2CS_2 4 `i -> 0 `i 853  ]
-[; ;I2CS.c: 53: {
-"53
-{
-[; ;I2CS.c: 54: hI2CS_2->rx_buffer[hI2CS_2->rx_cursor++] = SSP2BUF;
+[; ;interrupt_manager.c: 54: RCONbits.IPEN = 0;
 "54
-[e = *U + &U . *U _hI2CS_2 1 * -> ++ . *U _hI2CS_2 6 -> -> 1 `i `uc `ux -> -> # *U &U . *U _hI2CS_2 1 `ui `ux -> _SSP2BUF `ul ]
-[; ;I2CS.c: 55: hI2CS_2->rx_to_process--;
+[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
+[; ;interrupt_manager.c: 55: }
 "55
-[e -- . *U _hI2CS_2 4 -> -> 1 `i `uc ]
-[; ;I2CS.c: 57: if(hI2CS_2->rx_to_process == 0)
+[e :UE 850 ]
+}
+[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
+[v F3 `(v ~T0 @X0 1 tf ]
 "57
-[e $ ! == -> . *U _hI2CS_2 4 `i -> 0 `i 854  ]
-[; ;I2CS.c: 58: {
+[v _INTERRUPT_InterruptManager `IF3 ~T0 @X0 1 e ]
 "58
 {
-"59
-[v _reg `ul ~T0 @X0 1 a ]
-[; ;I2CS.c: 59: unsigned long reg = hI2CS_2->rx_buffer[0];
-[e = _reg *U + &U . *U _hI2CS_2 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _hI2CS_2 1 `ui `ux ]
-[; ;I2CS.c: 60: switch(reg)
+[; ;interrupt_manager.c: 57: void interrupt INTERRUPT_InterruptManager (void)
+[; ;interrupt_manager.c: 58: {
+[e :U _INTERRUPT_InterruptManager ]
+[f ]
+[; ;interrupt_manager.c: 60: if(INTCONbits.PEIE == 1 && PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
 "60
-[e $U 856  ]
-[; ;I2CS.c: 61: {
+[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE3bits 0 7 `i -> 1 `i == -> . . _PIR3bits 0 7 `i -> 1 `i 852  ]
+[; ;interrupt_manager.c: 61: {
 "61
 {
-[; ;I2CS.c: 62: case 0x0F:
+[; ;interrupt_manager.c: 62: I2CS_ISR();
 "62
-[e :U 857 ]
-[; ;I2CS.c: 63: if (hI2CS_2->rx_buffer)
+[e ( _I2CS_ISR ..  ]
 "63
-[e $ ! != &U . *U _hI2CS_2 1 -> -> 0 `i `*ul 858  ]
-[; ;I2CS.c: 64: {
-"64
-{
-"65
-[v _mem `uc ~T0 @X0 1 a ]
-[; ;I2CS.c: 65: char mem = 0x00;
-[e = _mem -> -> 0 `i `uc ]
-"66
-[v _temp `*uc ~T0 @X0 1 a ]
-[; ;I2CS.c: 66: char *temp = temp_read();
-[e = _temp -> ( _temp_read ..  `*uc ]
-[; ;I2CS.c: 67: memory_write(mem, temp);
-"67
-[e ( _memory_write , -> _mem `i _temp ]
-[; ;I2CS.c: 69: hI2CS_2->tx_buffer[0] = temp[0];
-"69
-[e = *U + &U . *U _hI2CS_2 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _hI2CS_2 0 `ui `ux -> *U + _temp * -> -> 0 `i `x -> -> # *U _temp `i `x `ul ]
-[; ;I2CS.c: 70: hI2CS_2->tx_buffer[1] = temp[1];
-"70
-[e = *U + &U . *U _hI2CS_2 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _hI2CS_2 0 `ui `ux -> *U + _temp * -> -> 1 `i `x -> -> # *U _temp `i `x `ul ]
-[; ;I2CS.c: 71: hI2CS_2->tx_to_process = 2 ;
-"71
-[e = . *U _hI2CS_2 3 -> -> 2 `i `uc ]
-"72
 }
-[; ;I2CS.c: 72: }
-[e $U 859  ]
+[; ;interrupt_manager.c: 63: }
+[e $U 853  ]
+"64
+[e :U 852 ]
+[; ;interrupt_manager.c: 64: else if(INTCONbits.PEIE == 1 && PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
+[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE2bits 0 3 `i -> 1 `i == -> . . _PIR2bits 0 3 `i -> 1 `i 854  ]
+[; ;interrupt_manager.c: 65: {
+"65
+{
+[; ;interrupt_manager.c: 66: I2C1_BusCollisionISR();
+"66
+[e ( _I2C1_BusCollisionISR ..  ]
+"67
+}
+[; ;interrupt_manager.c: 67: }
+[e $U 855  ]
+"68
+[e :U 854 ]
+[; ;interrupt_manager.c: 68: else if(INTCONbits.PEIE == 1 && PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
+[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE1bits 0 3 `i -> 1 `i == -> . . _PIR1bits 0 3 `i -> 1 `i 856  ]
+[; ;interrupt_manager.c: 69: {
+"69
+{
+"71
+}
+[; ;interrupt_manager.c: 71: }
+[e $U 857  ]
 "73
-[e :U 858 ]
-[; ;I2CS.c: 73: else
-[; ;I2CS.c: 74: {
+[e :U 856 ]
+[; ;interrupt_manager.c: 73: else
+[; ;interrupt_manager.c: 74: {
 "74
 {
 "76
 }
-[e :U 859 ]
-[; ;I2CS.c: 76: }
-[; ;I2CS.c: 80: break;
-"80
-[e $U 855  ]
-"81
-}
-[; ;I2CS.c: 81: }
-[e $U 855  ]
-"60
-[e :U 856 ]
-[e [\ _reg , $ -> -> -> 15 `i `l `ul 857
- 855 ]
-"81
+[e :U 857 ]
 [e :U 855 ]
-[; ;I2CS.c: 83: hI2CS_2->mode = 3;
-"83
-[e = . *U _hI2CS_2 2 -> -> -> 3 `i `l `ul ]
-"84
-}
-[e :U 854 ]
-"85
-}
 [e :U 853 ]
-[; ;I2CS.c: 84: }
-[; ;I2CS.c: 85: }
-[; ;I2CS.c: 87: if(hI2CS_2->mode == 1 & hI2CS_2->tx_to_process)
-"87
-[e $ ! != & -> == . *U _hI2CS_2 2 -> -> -> 1 `i `l `ul `i -> . *U _hI2CS_2 3 `i -> 0 `i 860  ]
-[; ;I2CS.c: 88: {
-"88
-{
-[; ;I2CS.c: 89: SSP2BUF = hI2CS_2->tx_buffer[hI2CS_2->tx_cursor++];
-"89
-[e = _SSP2BUF -> *U + &U . *U _hI2CS_2 0 * -> ++ . *U _hI2CS_2 5 -> -> 1 `i `uc `ux -> -> # *U &U . *U _hI2CS_2 0 `ui `ux `uc ]
-[; ;I2CS.c: 90: hI2CS_2->tx_to_process--;
-"90
-[e -- . *U _hI2CS_2 3 -> -> 1 `i `uc ]
-"91
-}
-[; ;I2CS.c: 91: }
-[e $U 861  ]
-"93
-[e :U 860 ]
-[; ;I2CS.c: 93: else if(hI2CS_2->mode > 1)
-[e $ ! > . *U _hI2CS_2 2 -> -> -> 1 `i `l `ul 862  ]
-[; ;I2CS.c: 94: {
-"94
-{
-"95
-[v _test `uc ~T0 @X0 1 a ]
-[; ;I2CS.c: 95: unsigned char test = 0x01;
-[e = _test -> -> 1 `i `uc ]
-[; ;I2CS.c: 96: hI2CS_2->mode = SSP2BUF && test;
-"96
-[e = . *U _hI2CS_2 2 -> -> -> && != -> _SSP2BUF `i -> -> -> 0 `i `Vuc `i != -> _test `i -> -> -> 0 `i `uc `i `i `l `ul ]
-[; ;I2CS.c: 97: if(hI2CS_2->mode == 0)
-"97
-[e $ ! == . *U _hI2CS_2 2 -> -> -> 0 `i `l `ul 863  ]
-[; ;I2CS.c: 98: {
-"98
-{
-[; ;I2CS.c: 99: hI2CS_2->rx_to_process = 1;
-"99
-[e = . *U _hI2CS_2 4 -> -> 1 `i `uc ]
-[; ;I2CS.c: 100: hI2CS_2->rx_cursor = 0;
-"100
-[e = . *U _hI2CS_2 6 -> -> 0 `i `uc ]
-"101
-}
-[e :U 863 ]
-[; ;I2CS.c: 101: }
-[; ;I2CS.c: 102: if(hI2CS_2->mode == 1)
-"102
-[e $ ! == . *U _hI2CS_2 2 -> -> -> 1 `i `l `ul 864  ]
-[; ;I2CS.c: 103: {
-"103
-{
-[; ;I2CS.c: 104: hI2CS_2->tx_to_process = 2;
-"104
-[e = . *U _hI2CS_2 3 -> -> 2 `i `uc ]
-[; ;I2CS.c: 105: hI2CS_2->tx_cursor = 0;
-"105
-[e = . *U _hI2CS_2 5 -> -> 0 `i `uc ]
-"106
-}
-[e :U 864 ]
-"107
-}
-[; ;I2CS.c: 106: }
-[; ;I2CS.c: 107: }
-[e $U 865  ]
-"109
-[e :U 862 ]
-[; ;I2CS.c: 109: else
-[; ;I2CS.c: 110: {
-"110
-{
-[; ;I2CS.c: 111: hI2CS_2->mode = 3;
-"111
-[e = . *U _hI2CS_2 2 -> -> -> 3 `i `l `ul ]
-"112
-}
-[e :U 865 ]
-[e :U 861 ]
-[; ;I2CS.c: 112: }
-[; ;I2CS.c: 113: }
-"113
-[e :UE 852 ]
+[; ;interrupt_manager.c: 76: }
+[; ;interrupt_manager.c: 77: }
+"77
+[e :UE 851 ]
 }

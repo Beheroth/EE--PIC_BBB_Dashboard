@@ -59,7 +59,21 @@ void I2CS_ISR()
             unsigned long reg = hI2CS_2->rx_buffer[0];
             switch(reg)
             {
-                case 0x0F:       
+                case 0x0F:
+                    if (hI2CS_2->rx_buffer)
+                    {        
+                        char mem = 0x00;
+                        char *temp = temp_read();
+                        memory_write(mem, temp);
+
+                        hI2CS_2->tx_buffer[0] = temp[0];
+                        hI2CS_2->tx_buffer[1] = temp[1];
+                        hI2CS_2->tx_to_process = 2 ;            
+                    }
+                    else
+                    {
+                        //Nothing
+                    }
                     //temp_read(hI2CS_2);             //[TODO]fix include problems
                     //memory_write();               //[todo]
                     //tx_buffer is filled, waiting for master to pull it
