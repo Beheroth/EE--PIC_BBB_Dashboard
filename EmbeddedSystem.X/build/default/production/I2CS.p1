@@ -2,7 +2,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "22 I2CS.h
 [s S850 `ul -> 10 `i `ul -> 10 `i `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S850 . tx_buffer rx_buffer mode tx_to_process rx_to_process tx_cursor rx_cursor slaveAddr ]
-"3796 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+"3796 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
 [v _SSP2STAT `Vuc ~T0 @X0 0 e@3949 ]
 "3676
 [v _SSP2CON1 `Vuc ~T0 @X0 0 e@3948 ]
@@ -53,7 +53,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "4266
 [v _SSP2BUF `Vuc ~T0 @X0 0 e@3951 ]
 [; ;pic18f46k22.h: 50: extern volatile unsigned char ANSELA @ 0xF38;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
 [; ;pic18f46k22.h: 52: asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
 [; ;pic18f46k22.h: 55: typedef union {
@@ -6791,60 +6791,64 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2CS.c: 80: {
 "80
 {
-[; ;I2CS.c: 81: hI2CS_2->mode = SSP2BUF && 0x01;
 "81
-[e = . *U _hI2CS_2 2 -> -> -> && != -> _SSP2BUF `i -> -> -> 0 `i `Vuc `i != -> 1 `i -> 0 `i `i `l `ul ]
-[; ;I2CS.c: 82: if(hI2CS_2->mode == 0)
+[v _test `uc ~T0 @X0 1 a ]
+[; ;I2CS.c: 81: unsigned char test = 0x01;
+[e = _test -> -> 1 `i `uc ]
+[; ;I2CS.c: 82: hI2CS_2->mode = SSP2BUF && test;
 "82
-[e $ ! == . *U _hI2CS_2 2 -> -> -> 0 `i `l `ul 861  ]
-[; ;I2CS.c: 83: {
+[e = . *U _hI2CS_2 2 -> -> -> && != -> _SSP2BUF `i -> -> -> 0 `i `Vuc `i != -> _test `i -> -> -> 0 `i `uc `i `i `l `ul ]
+[; ;I2CS.c: 83: if(hI2CS_2->mode == 0)
 "83
-{
-[; ;I2CS.c: 84: hI2CS_2->rx_to_process = 1;
+[e $ ! == . *U _hI2CS_2 2 -> -> -> 0 `i `l `ul 861  ]
+[; ;I2CS.c: 84: {
 "84
-[e = . *U _hI2CS_2 4 -> -> 1 `i `uc ]
-[; ;I2CS.c: 85: hI2CS_2->rx_cursor = 0;
+{
+[; ;I2CS.c: 85: hI2CS_2->rx_to_process = 1;
 "85
-[e = . *U _hI2CS_2 6 -> -> 0 `i `uc ]
+[e = . *U _hI2CS_2 4 -> -> 1 `i `uc ]
+[; ;I2CS.c: 86: hI2CS_2->rx_cursor = 0;
 "86
+[e = . *U _hI2CS_2 6 -> -> 0 `i `uc ]
+"87
 }
 [e :U 861 ]
-[; ;I2CS.c: 86: }
-[; ;I2CS.c: 87: if(hI2CS_2->mode == 1)
-"87
-[e $ ! == . *U _hI2CS_2 2 -> -> -> 1 `i `l `ul 862  ]
-[; ;I2CS.c: 88: {
+[; ;I2CS.c: 87: }
+[; ;I2CS.c: 88: if(hI2CS_2->mode == 1)
 "88
-{
-[; ;I2CS.c: 89: hI2CS_2->tx_to_process = 2;
+[e $ ! == . *U _hI2CS_2 2 -> -> -> 1 `i `l `ul 862  ]
+[; ;I2CS.c: 89: {
 "89
-[e = . *U _hI2CS_2 3 -> -> 2 `i `uc ]
-[; ;I2CS.c: 90: hI2CS_2->tx_cursor = 0;
+{
+[; ;I2CS.c: 90: hI2CS_2->tx_to_process = 2;
 "90
-[e = . *U _hI2CS_2 5 -> -> 0 `i `uc ]
+[e = . *U _hI2CS_2 3 -> -> 2 `i `uc ]
+[; ;I2CS.c: 91: hI2CS_2->tx_cursor = 0;
 "91
-}
-[e :U 862 ]
+[e = . *U _hI2CS_2 5 -> -> 0 `i `uc ]
 "92
 }
-[; ;I2CS.c: 91: }
+[e :U 862 ]
+"93
+}
 [; ;I2CS.c: 92: }
+[; ;I2CS.c: 93: }
 [e $U 863  ]
-"94
-[e :U 860 ]
-[; ;I2CS.c: 94: else
-[; ;I2CS.c: 95: {
 "95
-{
-[; ;I2CS.c: 96: hI2CS_2->mode = 3;
+[e :U 860 ]
+[; ;I2CS.c: 95: else
+[; ;I2CS.c: 96: {
 "96
-[e = . *U _hI2CS_2 2 -> -> -> 3 `i `l `ul ]
+{
+[; ;I2CS.c: 97: hI2CS_2->mode = 3;
 "97
+[e = . *U _hI2CS_2 2 -> -> -> 3 `i `l `ul ]
+"98
 }
 [e :U 863 ]
 [e :U 859 ]
-[; ;I2CS.c: 97: }
 [; ;I2CS.c: 98: }
-"98
+[; ;I2CS.c: 99: }
+"99
 [e :UE 852 ]
 }

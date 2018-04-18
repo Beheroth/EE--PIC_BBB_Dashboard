@@ -47,6 +47,7 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
+#include "../I2CS.h"
 
 void  INTERRUPT_Initialize (void)
 {
@@ -59,11 +60,11 @@ void interrupt INTERRUPT_InterruptManager (void)
     // interrupt handler
     if(INTCONbits.PEIE == 1 && PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
     {
-        I2CS_Handler_t i2c2;
+        I2CS_Handler_t *i2c2;
         if (i2c2->rx_buffer)
         {        
             char mem = 0x00;
-            char temp[2]; 
+            
 
             char temp = temp_read();
             memory_write(mem, temp);

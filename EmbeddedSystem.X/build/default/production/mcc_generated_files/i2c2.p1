@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"3796 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+"3796 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
 [v _SSP2STAT `Vuc ~T0 @X0 0 e@3949 ]
 "3676
 [v _SSP2CON1 `Vuc ~T0 @X0 0 e@3948 ]
@@ -131,7 +131,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n E6987 . I2C2_SLAVE_WRITE_REQUEST I2C2_SLAVE_READ_REQUEST I2C2_SLAVE_WRITE_COMPLETED I2C2_SLAVE_READ_COMPLETED  ]
 "67
 [v _I2C2_StatusCallback `(v ~T0 @X0 0 ef1`E6987 ]
-"3682 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+"3682 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
 [s S170 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S170 . SSPM CKP SSPEN SSPOV WCOL ]
 "3689
@@ -183,7 +183,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 50: extern volatile unsigned char ANSELA @ 0xF38;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f46k22.h
 [; ;pic18f46k22.h: 52: asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
 [; ;pic18f46k22.h: 55: typedef union {

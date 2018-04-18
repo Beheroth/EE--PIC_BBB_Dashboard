@@ -78,7 +78,8 @@ void I2CS_ISR()
     
     else if(hI2CS_2->mode > 1)            //mode is not defined yet 
     {
-        hI2CS_2->mode = SSP2BUF && 0x01;    //masking irrelevant bits 
+        unsigned char test = 0x01;
+        hI2CS_2->mode = SSP2BUF && test;    //masking irrelevant bits 
         if(hI2CS_2->mode == 0)      //configuring for READ mode
         {
             hI2CS_2->rx_to_process = 1;

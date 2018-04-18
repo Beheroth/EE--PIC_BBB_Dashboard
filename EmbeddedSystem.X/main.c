@@ -140,7 +140,7 @@ void i2c1_stop(void)
 }
 
 /******************************************************************************************/
-
+/*
 int i2c1_read( unsigned char ack )
 {
     unsigned char i2cReadData;
@@ -167,9 +167,9 @@ int i2c1_read( unsigned char ack )
 
     return( i2cReadData );
 }
-
+*/
 /******************************************************************************************/
-
+/*
 unsigned char i2c1_write( unsigned char i2cWriteData )
 {
     i2c1_waitForIdle();
@@ -177,7 +177,7 @@ unsigned char i2c1_write( unsigned char i2cWriteData )
 
     return ( ! SSP1CON2bits.ACKSTAT  ); // function returns '1' if transmission is acknowledged
 }
-
+*/
 /******************************************************************************************/
 
 void memory_write (char mem, char *temp)
@@ -218,7 +218,7 @@ char memory_read(char *temp, char *mem)
     return t;
 }
 
-void temp_init()
+void temp_init(void)
 {
     i2c1_start();
     
@@ -228,7 +228,7 @@ void temp_init()
     i2c1_stop();
 }
 
-char temp_read()
+char *temp_read()
 {
 
     i2c1_start();
